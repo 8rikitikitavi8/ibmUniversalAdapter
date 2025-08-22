@@ -6,20 +6,15 @@ import jakarta.jms.JMSException;
 import jakarta.jms.Message;
 import jakarta.jms.MessageListener;
 import jakarta.jms.TextMessage;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.jms.core.JmsTemplate;
 
+@RequiredArgsConstructor
+@Slf4j
 public class StubMessageListener implements MessageListener {
-	private static final Logger log = LoggerFactory.getLogger(StubMessageListener.class);
-
 	private final AppProperties.Route route;
 	private final JmsTemplate replyTemplate;
-
-	public StubMessageListener(AppProperties.Route route, JmsTemplate replyTemplate) {
-		this.route = route;
-		this.replyTemplate = replyTemplate;
-	}
 
 	@Override
 	public void onMessage(Message message) {

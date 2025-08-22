@@ -2,6 +2,8 @@
 
 Spring Boot app that listens on queues across multiple IBM MQ brokers and replies to configured queues. Supports TLS per-broker using keystore/truststore and optional cipher suite.
 
+Note: Project uses Lombok for boilerplate reduction. Ensure Lombok plugin is enabled in your IDE.
+
 ## Configure
 
 Edit `src/main/resources/application.yml`:
