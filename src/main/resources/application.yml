@@ -1,0 +1,41 @@
+stub:
+  brokers:
+    - id: broker-plain
+      vendor: ACTIVEMQ
+      url: tcp://localhost:61616
+      username: admin
+      password: admin
+      tls:
+        enabled: false
+    - id: broker-tls
+      vendor: ACTIVEMQ
+      url: ssl://localhost:61617
+      username: admin
+      password: admin
+      tls:
+        enabled: true
+        truststorePath: /absolute/path/to/truststore.jks
+        truststorePassword: changeit
+        truststoreType: JKS
+        keystorePath: /absolute/path/to/keystore.jks
+        keystorePassword: changeit
+        keystoreType: JKS
+  routes:
+    - listenBrokerId: broker-plain
+      listenQueue: IN.Q
+      replyBrokerId: broker-plain
+      replyQueue: OUT.Q
+      staticResponse: '{"status":"ok"}'
+    - listenBrokerId: broker-tls
+      listenQueue: SECURE.IN
+      replyBrokerId: broker-tls
+      replyQueue: SECURE.OUT
+
+spring:
+  main:
+    banner-mode: console
+logging:
+  level:
+    root: info
+    org.springframework.jms: info
+    com.example.jmsstub: info
