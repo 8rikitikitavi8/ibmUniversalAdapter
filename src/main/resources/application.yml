@@ -1,19 +1,24 @@
 stub:
   brokers:
-    - id: broker-plain
-      vendor: ACTIVEMQ
-      url: tcp://localhost:61616
-      username: admin
-      password: admin
+    - id: mq-plain
+      host: localhost
+      port: 1414
+      queueManager: QM1
+      channel: DEV.APP.SVRCONN
+      username: app
+      password: passw0rd
       tls:
         enabled: false
-    - id: broker-tls
-      vendor: ACTIVEMQ
-      url: ssl://localhost:61617
-      username: admin
-      password: admin
+    - id: mq-tls
+      host: localhost
+      port: 1415
+      queueManager: QM2
+      channel: SECURE.APP.SVRCONN
+      username: app
+      password: passw0rd
       tls:
         enabled: true
+        cipherSuite: TLS_AES_128_GCM_SHA256
         truststorePath: /absolute/path/to/truststore.jks
         truststorePassword: changeit
         truststoreType: JKS
@@ -21,15 +26,15 @@ stub:
         keystorePassword: changeit
         keystoreType: JKS
   routes:
-    - listenBrokerId: broker-plain
-      listenQueue: IN.Q
-      replyBrokerId: broker-plain
-      replyQueue: OUT.Q
+    - listenBrokerId: mq-plain
+      listenQueue: DEV.QUEUE.1
+      replyBrokerId: mq-plain
+      replyQueue: DEV.QUEUE.REPLIES
       staticResponse: '{"status":"ok"}'
-    - listenBrokerId: broker-tls
-      listenQueue: SECURE.IN
-      replyBrokerId: broker-tls
-      replyQueue: SECURE.OUT
+    - listenBrokerId: mq-tls
+      listenQueue: SECURE.REQUESTS
+      replyBrokerId: mq-tls
+      replyQueue: SECURE.RESPONSES
 
 spring:
   main:

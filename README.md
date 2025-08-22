@@ -1,15 +1,17 @@
-# JMS Stub (Multi-broker, optional TLS)
+# JMS Stub (IBM MQ, multi-broker, optional TLS)
 
-Small Spring Boot app that listens on queues across multiple JMS brokers (ActiveMQ 5.x), and sends stubbed responses to configured queues. Some brokers can use TLS with keystore/truststore.
+Spring Boot app that listens on queues across multiple IBM MQ brokers and replies to configured queues. Supports TLS per-broker using keystore/truststore and optional cipher suite.
 
 ## Configure
 
 Edit `src/main/resources/application.yml`:
-- Define `stub.brokers`: list of brokers with `id`, `url`, credentials, and `tls` block if needed.
-- Define `stub.routes`: each route tells which broker/queue to listen on and where to send replies.
-- Optional `staticResponse` per route. If omitted, the app replies with a JSON `{status:"ok", echo:"..."}`.
+- `stub.brokers`: list of IBM MQ endpoints
+  - `id`, `host`, `port`, `queueManager`, `channel`, `username`, `password`
+  - `tls`: `enabled`, optional `cipherSuite`, `truststorePath/password/type`, `keystorePath/password/type`
+- `stub.routes`: each route specifies which broker/queue to listen on and where to send replies
+- Optional `staticResponse`. If omitted, app replies with JSON `{status:"ok", echo:"..."}`
 
-Note: For TLS, use `ssl://host:port` URL and absolute paths to JKS stores. Classpath paths like `classpath:certs/truststore.jks` are also supported.
+Keystore/truststore paths can be absolute or `classpath:` URLs. Cipher suite must be enabled on the channel (e.g. `TLS_AES_128_GCM_SHA256`).
 
 ## Build
 
@@ -24,15 +26,16 @@ mvn -q -DskipTests package
 java -jar target/jms-stub-0.1.0.jar
 ```
 
-Or with overrides:
+Override TLS at runtime if needed:
 
 ```bash
-java -Dserver.port=8081 \
-  -Dstub.brokers[1].tls.truststorePath=/path/truststore.jks \
+java -Dstub.brokers[1].tls.truststorePath=/path/truststore.jks \
   -Dstub.brokers[1].tls.truststorePassword=changeit \
+  -Dstub.brokers[1].tls.cipherSuite=TLS_AES_128_GCM_SHA256 \
   -jar target/jms-stub-0.1.0.jar
 ```
 
 ## Notes
-- Tested with ActiveMQ Classic 5.x. Other JMS brokers may work if they are ActiveMQ-compatible.
-- The app preserves/sets `JMSCorrelationID`. If incoming has none, it uses the incoming `JMSMessageID`.
+- Uses IBM MQ Jakarta client: `com.ibm.mq:com.ibm.mq.allclient`.
+- JMS API is `jakarta.jms.*` (compatible with Spring Boot 3+).
+- Maintains `JMSCorrelationID`; falls back to `JMSMessageID`.
