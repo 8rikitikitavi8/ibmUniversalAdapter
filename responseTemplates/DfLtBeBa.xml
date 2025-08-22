@@ -1,0 +1,31 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdpmt="urn:ucbru:gbo:v5:sdpmt">
+ <SOAP-ENV:Header>
+  <gbo:UCBRUHeaders xmlns:gbo="urn:ucbru:gbo:v5">
+   <gbo:Audit>
+    <gbo:MessagePath>
+     <gbo:Step>
+      <gbo:Application.Module>SDPMT.SDPMTDfltBenefBank</gbo:Application.Module>
+      <gbo:VersionId>urn:ucbru:gbo:v5</gbo:VersionId>
+      <gbo:TimeStamp>${generate.dateNow}</gbo:TimeStamp>
+      <gbo:RoutingRole>START</gbo:RoutingRole>
+      <gbo:Comment/>
+     </gbo:Step>
+     <gbo:Step>
+      <gbo:Application.Module>SDPMT.SDPMTDfltBenefBank</gbo:Application.Module>
+      <gbo:VersionId>urn:ucbru:gbo:v5</gbo:VersionId>
+      <gbo:TimeStamp>${generate.dateNow}</gbo:TimeStamp>
+      <gbo:RoutingRole>SUCCESS</gbo:RoutingRole>
+      <gbo:Comment></gbo:Comment>
+     </gbo:Step>
+    </gbo:MessagePath>
+   </gbo:Audit>
+  </gbo:UCBRUHeaders>
+ </SOAP-ENV:Header>
+ <SOAP-ENV:Body>
+  <sdpmt:SDPMTDfltBenefBank xmlns:sdpmt="urn:ucbru:gbo:v5:sdpmt">
+   <sdpmt:Code>NOT_FOUND</sdpmt:Code>
+   <sdpmt:Description>I00000</sdpmt:Description>
+   <sdpmt:BusinessMessageId>${receive.id}</sdpmt:BusinessMessageId>
+  </sdpmt:SDPMTDfltBenefBank>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

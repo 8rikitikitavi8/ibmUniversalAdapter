@@ -1,0 +1,464 @@
+<ns2:Envelope xmlns:ns2="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns4="urn:ucbru:gbo:v3" xmlns:ns3="urn:ucbru:gbo:v3:st" xmlns:ns6="urn:ucbru:gbo:v5:spdep" xmlns:ns20="http://mfms.ru/mfmsgate/push/devices" xmlns:ns5="urn:ucbru:gbo:v5:loan" xmlns:ns8="urn:ucbru:gbo:v5:card" xmlns:ns7="urn:ucbru:gbo:v5:acc" xmlns:ns13="urn:ucbru:gbo:v5:push:devices:response" xmlns:ns9="urn:ucbru:gbo:v5:cif" xmlns:ns12="urn:ucbru:gbo:v5:push:devices:request" xmlns:ns11="urn:ucbru:gbo:v5:ordst" xmlns:ns10="urn:ucbru:gbo:v5:docst" xmlns:ns17="urn:imb:gbo:BSCardStm" xmlns:ns16="urn:ucbru:gbo:v4" xmlns:ns15="urn:ucbru:gbo:v5" xmlns:ns14="urn:ucbru:gbo:v5:sdpmt" xmlns:ns19="urn:ucbru:esb:srv:sms" xmlns:ns18="urn:imb:gbo:BSCardAuthorization">
+    <ns2:Header>
+        <ns15:UCBRUHeaders>
+            <ns15:Audit>
+                <ns15:MessagePath>
+                    <ns15:Step>
+                        <ns15:Application.Module>SDPMT.SDPMTPmtStat</ns15:Application.Module>
+                        <ns15:VersionId>v5</ns15:VersionId>
+                        <ns15:TimeStamp>${generate.dateNow}</ns15:TimeStamp>
+                        <ns15:RoutingRole>START</ns15:RoutingRole>
+                        <ns15:Comment></ns15:Comment>
+                    </ns15:Step>
+                    <ns15:Step>
+                        <ns15:Application.Module>SDPMT.SDPMTPmtStat</ns15:Application.Module>
+                        <ns15:VersionId>v5</ns15:VersionId>
+                        <ns15:TimeStamp>${generate.dateNow}</ns15:TimeStamp>
+                        <ns15:RoutingRole>SUCCESS</ns15:RoutingRole>
+                        <ns15:Comment></ns15:Comment>
+                    </ns15:Step>
+                </ns15:MessagePath>
+            </ns15:Audit>
+        </ns15:UCBRUHeaders>
+    </ns2:Header>
+    <ns2:Body>
+        <ns14:SDPMTPmtStat>
+            <ns14:Query>
+                <ns14:CustomerNo>${receive.id}</ns14:CustomerNo>
+                <ns14:FromDate>2022-06-01</ns14:FromDate>
+                <ns14:ToDate>2022-06-29</ns14:ToDate>
+            </ns14:Query>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-29T09:15:12.774064</ns14:DateTime>
+                <ns14:BusinessMessageId>B${receive.id}0504400000014II00000001</ns14:BusinessMessageId>
+                <ns14:Direction>I</ns14:Direction>
+                <ns14:Status>PROCESSING</ns14:Status>
+                <ns14:Type>C2CPull</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>55500</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:Identity>0079263868707</ns14:Identity>
+                    <ns14:PAM>Марк Аркадьевич С</ns14:PAM>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>Перечисление средств на свой счет</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-29T08:59:13.710985</ns14:DateTime>
+                <ns14:BusinessMessageId>A${receive.id}0495200000004II00000001</ns14:BusinessMessageId>
+                <ns14:Direction>I</ns14:Direction>
+                <ns14:Status>PROCESSING</ns14:Status>
+                <ns14:Type>C2CPull</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>55500</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:Identity>0079263868707</ns14:Identity>
+                    <ns14:PAM>Марк Аркадьевич С</ns14:PAM>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>Перечисление средств на свой счет</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-28T12:18:06.005536</ns14:DateTime>
+                <ns14:BusinessMessageId>A${receive.id}57559010000047F24E9414C</ns14:BusinessMessageId>
+                <ns14:Direction>O</ns14:Direction>
+                <ns14:Status>SUCCESS</ns14:Status>
+                <ns14:Type>C2CPush</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>5500</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:Identity>0070115100030</ns14:Identity>
+                    <ns14:PAM>Петр Петрович П</ns14:PAM>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>1234</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-27T10:50:23.172533</ns14:DateTime>
+                <ns14:BusinessMessageId>B${receive.id}04624010000147F24E9414C</ns14:BusinessMessageId>
+                <ns14:Direction>O</ns14:Direction>
+                <ns14:Status>SUCCESS</ns14:Status>
+                <ns14:Type>C2CPush</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>1600000</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:Identity>0070115100030</ns14:Identity>
+                    <ns14:PAM>Петр Петрович П</ns14:PAM>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>000555000</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-27T10:48:13.322819</ns14:DateTime>
+                <ns14:BusinessMessageId>B${receive.id}54446010000147F24E9414C</ns14:BusinessMessageId>
+                <ns14:Direction>O</ns14:Direction>
+                <ns14:Status>SUCCESS</ns14:Status>
+                <ns14:Type>C2CPush</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>1600000</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:Identity>0070115100030</ns14:Identity>
+                    <ns14:PAM>Петр Петрович П</ns14:PAM>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>000555000</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-23T18:22:54.705252</ns14:DateTime>
+                <ns14:BusinessMessageId>A${receive.id}52842010000047F24E9414C</ns14:BusinessMessageId>
+                <ns14:Direction>O</ns14:Direction>
+                <ns14:Status>ERROR</ns14:Status>
+                <ns14:Type>QRStat</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>12300</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:OfficialName>ООО Ромашка</ns14:OfficialName>
+                    <ns14:TradeName>"Цветы у дома"</ns14:TradeName>
+                    <ns14:INN>6514008400</ns14:INN>
+                    <ns14:CBAccount>40702810900000001170</ns14:CBAccount>
+                    <ns14:Address>УЛИЦА ТАТАРСКАЯ Б. ДОМ 11</ns14:Address>
+                    <ns14:MCC>5992</ns14:MCC>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>Тестовый QR Static для теста №500</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-16T16:34:27.095035</ns14:DateTime>
+                <ns14:BusinessMessageId>B${receive.id}14586010000147F24E9414C</ns14:BusinessMessageId>
+                <ns14:Direction>O</ns14:Direction>
+                <ns14:Status>SUCCESS</ns14:Status>
+                <ns14:Type>C2CPush</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>1600500</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:Identity>0070115110030</ns14:Identity>
+                    <ns14:PAM>Петр Петрович П</ns14:PAM>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>Тест</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-16T14:09:30.956312</ns14:DateTime>
+                <ns14:BusinessMessageId>B${receive.id}21723010000147F24E9414C</ns14:BusinessMessageId>
+                <ns14:Direction>O</ns14:Direction>
+                <ns14:Status>SUCCESS</ns14:Status>
+                <ns14:Type>C2CPush</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>5500</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:Identity>0070115100030</ns14:Identity>
+                    <ns14:PAM>Петр Петрович П</ns14:PAM>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>1234</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-15T14:07:01.670694</ns14:DateTime>
+                <ns14:BusinessMessageId>B${receive.id}56130010000147F24E9414C</ns14:BusinessMessageId>
+                <ns14:Direction>O</ns14:Direction>
+                <ns14:Status>SUCCESS</ns14:Status>
+                <ns14:Type>C2CPush</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>5500</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:Identity>0070115100030</ns14:Identity>
+                    <ns14:PAM>Петр Петрович П</ns14:PAM>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>1234</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-15T14:06:40.636687</ns14:DateTime>
+                <ns14:BusinessMessageId>B${receive.id}32921010000147F24E9414C</ns14:BusinessMessageId>
+                <ns14:Direction>O</ns14:Direction>
+                <ns14:Status>SUCCESS</ns14:Status>
+                <ns14:Type>C2CPush</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>5500</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:Identity>0070115100030</ns14:Identity>
+                    <ns14:PAM>Петр Петрович П</ns14:PAM>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>1234</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-15T14:01:27.393861</ns14:DateTime>
+                <ns14:BusinessMessageId>B${receive.id}21699010000147F24E9414C</ns14:BusinessMessageId>
+                <ns14:Direction>O</ns14:Direction>
+                <ns14:Status>SUCCESS</ns14:Status>
+                <ns14:Type>C2CPush</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>5500</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:Identity>0070115100030</ns14:Identity>
+                    <ns14:PAM>Петр Петрович П</ns14:PAM>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>1234</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-15T14:01:06.497343</ns14:DateTime>
+                <ns14:BusinessMessageId>B${receive.id}58843010000147F24E9414C</ns14:BusinessMessageId>
+                <ns14:Direction>O</ns14:Direction>
+                <ns14:Status>SUCCESS</ns14:Status>
+                <ns14:Type>C2CPush</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>5500</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:Identity>0070115100030</ns14:Identity>
+                    <ns14:PAM>Петр Петрович П</ns14:PAM>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>1234</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-15T13:28:23.613798</ns14:DateTime>
+                <ns14:BusinessMessageId>B${receive.id}16000010000147F24E9414C</ns14:BusinessMessageId>
+                <ns14:Direction>O</ns14:Direction>
+                <ns14:Status>SUCCESS</ns14:Status>
+                <ns14:Type>C2CPush</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>5500</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:Identity>0070115100030</ns14:Identity>
+                    <ns14:PAM>Петр Петрович П</ns14:PAM>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>1234</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-15T11:40:15.813266</ns14:DateTime>
+                <ns14:BusinessMessageId>B${receive.id}05813050000147F24E9414C</ns14:BusinessMessageId>
+                <ns14:Direction>O</ns14:Direction>
+                <ns14:Status>SUCCESS</ns14:Status>
+                <ns14:Type>C2CPush</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>5500</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:Identity>0070115100030</ns14:Identity>
+                    <ns14:PAM>Петр Петрович П</ns14:PAM>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>1234</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-14T15:12:15.036256</ns14:DateTime>
+                <ns14:BusinessMessageId>B${receive.id}07313010000147F24E9414C</ns14:BusinessMessageId>
+                <ns14:Direction>O</ns14:Direction>
+                <ns14:Status>SUCCESS</ns14:Status>
+                <ns14:Type>C2CPush</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>5500</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:Identity>0070115100030</ns14:Identity>
+                    <ns14:PAM>Петр Петрович П</ns14:PAM>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>1234</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-14T13:44:32.416179</ns14:DateTime>
+                <ns14:BusinessMessageId>B${receive.id}22282010000147F24E9414C</ns14:BusinessMessageId>
+                <ns14:Direction>O</ns14:Direction>
+                <ns14:Status>SUCCESS</ns14:Status>
+                <ns14:Type>C2CPush</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>5500</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:Identity>0070115100030</ns14:Identity>
+                    <ns14:PAM>Петр Петрович П</ns14:PAM>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>1234</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-14T13:40:28.269212</ns14:DateTime>
+                <ns14:BusinessMessageId>B${receive.id}08949010000147F24E9414C</ns14:BusinessMessageId>
+                <ns14:Direction>O</ns14:Direction>
+                <ns14:Status>SUCCESS</ns14:Status>
+                <ns14:Type>C2CPush</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>55500</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:Identity>0070115100030</ns14:Identity>
+                    <ns14:PAM>Петр Петрович П</ns14:PAM>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>2606</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-10T10:46:52.320394</ns14:DateTime>
+                <ns14:BusinessMessageId>B${receive.id}43970010000147F24E9414C</ns14:BusinessMessageId>
+                <ns14:Direction>O</ns14:Direction>
+                <ns14:Status>SUCCESS</ns14:Status>
+                <ns14:Type>C2CPush</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>5500</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:Identity>0070115100030</ns14:Identity>
+                    <ns14:PAM>Петр Петрович П</ns14:PAM>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>1234</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-10T08:28:30.683609</ns14:DateTime>
+                <ns14:BusinessMessageId>B${receive.id}23292010000147F24E9414C</ns14:BusinessMessageId>
+                <ns14:Direction>O</ns14:Direction>
+                <ns14:Status>SUCCESS</ns14:Status>
+                <ns14:Type>C2CPush</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>5500</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:Identity>0070115100030</ns14:Identity>
+                    <ns14:PAM>Петр Петрович П</ns14:PAM>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>1234</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-09T15:56:28.736817</ns14:DateTime>
+                <ns14:BusinessMessageId>B219212${receive.id}0000014II00000001</ns14:BusinessMessageId>
+                <ns14:Direction>I</ns14:Direction>
+                <ns14:Status>PROCESSING</ns14:Status>
+                <ns14:Type>C2CPull</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>50000</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:Identity>0079263868707</ns14:Identity>
+                    <ns14:PAM>Марк Аркадьевич С</ns14:PAM>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>Перечисление средств на свой счет</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-09T15:42:11.441374</ns14:DateTime>
+                <ns14:BusinessMessageId>B219212420${receive.id}00147F24E9414C</ns14:BusinessMessageId>
+                <ns14:Direction>O</ns14:Direction>
+                <ns14:Status>SUCCESS</ns14:Status>
+                <ns14:Type>C2CPush</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>5500</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:Identity>0070115100030</ns14:Identity>
+                    <ns14:PAM>Петр Петрович П</ns14:PAM>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>1234</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-08T11:34:14.524386</ns14:DateTime>
+                <ns14:BusinessMessageId>B219008${receive.id}10000146517BE1DD5</ns14:BusinessMessageId>
+                <ns14:Direction>O</ns14:Direction>
+                <ns14:Status>SUCCESS</ns14:Status>
+                <ns14:Type>C2CPush</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>55500</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:Identity>0070115100030</ns14:Identity>
+                    <ns14:PAM>Петр Петрович П</ns14:PAM>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>1234</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-07T10:00:00</ns14:DateTime>
+                <ns14:BusinessMessageId>B999${receive.id}99999999999999AA9AA1</ns14:BusinessMessageId>
+                <ns14:Direction>I</ns14:Direction>
+                <ns14:Status>SUCCESS</ns14:Status>
+                <ns14:Type>B2C</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>1000000</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:OfficialName>LA0000315103</ns14:OfficialName>
+                    <ns14:TradeName></ns14:TradeName>
+                    <ns14:INN>660312662325</ns14:INN>
+                    <ns14:CBAccount>40802810870010205313</ns14:CBAccount>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>Прочий платеж</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-06T15:16:11.883701</ns14:DateTime>
+                <ns14:BusinessMessageId>B21901${receive.id}010000146517BE1DD5</ns14:BusinessMessageId>
+                <ns14:Direction>O</ns14:Direction>
+                <ns14:Status>SUCCESS</ns14:Status>
+                <ns14:Type>C2CPush</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>1600000</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:Identity>0070115100030</ns14:Identity>
+                    <ns14:PAM>Петр Петрович П</ns14:PAM>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>1234</ns14:Narrative>
+            </ns14:Operation>
+            <ns14:Operation>
+                <ns14:DateTime>2022-06-02T13:12:35.413268</ns14:DateTime>
+                <ns14:BusinessMessageId>B2182101${receive.id}0000146517BE1DD5</ns14:BusinessMessageId>
+                <ns14:Direction>O</ns14:Direction>
+                <ns14:Status>SUCCESS</ns14:Status>
+                <ns14:Type>C2CPush</ns14:Type>
+                <ns14:CBAccount>${AccountList.account2}</ns14:CBAccount>
+                <ns14:Amount>1600000</ns14:Amount>
+                <ns14:Currency>RUB</ns14:Currency>
+                <ns14:Counterparty>
+                    <ns14:Identity>0070115100030</ns14:Identity>
+                    <ns14:PAM>Петр Петрович П</ns14:PAM>
+                    <ns14:BankId>1crt88888881</ns14:BankId>
+                    <ns14:BankName>ООО ПИР Банк</ns14:BankName>
+                </ns14:Counterparty>
+                <ns14:Narrative>000555000</ns14:Narrative>
+            </ns14:Operation>
+        </ns14:SDPMTPmtStat>
+    </ns2:Body>
+</ns2:Envelope>

@@ -1,0 +1,175 @@
+<ns2:Envelope xmlns:ns2="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns4="urn:ucbru:gbo:v3" xmlns:ns3="urn:ucbru:gbo:v3:st" xmlns:ns6="urn:ucbru:gbo:v5:spdep" xmlns:ns20="http://mfms.ru/mfmsgate/push/devices" xmlns:ns5="urn:ucbru:gbo:v5:loan" xmlns:ns8="urn:ucbru:gbo:v5:card" xmlns:ns7="urn:ucbru:gbo:v5:acc" xmlns:ns13="urn:ucbru:gbo:v5:push:devices:response" xmlns:ns9="urn:ucbru:gbo:v5:cif" xmlns:ns12="urn:ucbru:gbo:v5:push:devices:request" xmlns:ns11="urn:ucbru:gbo:v5:ordst" xmlns:ns10="urn:ucbru:gbo:v5:docst" xmlns:ns17="urn:imb:gbo:BSCardStm" xmlns:ns16="urn:ucbru:gbo:v4" xmlns:ns15="urn:ucbru:gbo:v5" xmlns:ns14="urn:ucbru:gbo:v5:sdpmt" xmlns:ns19="urn:ucbru:esb:srv:sms" xmlns:ns18="urn:imb:gbo:BSCardAuthorization">
+    <ns2:Header>
+        <ns15:UCBRUHeaders>
+            <ns15:Audit>
+                <ns15:MessagePath>
+                    <ns15:Step>
+                        <ns15:Application.Module>SCUST.CustomerListQuery.RequestHandler</ns15:Application.Module>
+                        <ns15:VersionId>v5</ns15:VersionId>
+                        <ns15:TimeStamp>${generate.dateNow}</ns15:TimeStamp>
+                        <ns15:RoutingRole>START</ns15:RoutingRole>
+                        <ns15:Comment></ns15:Comment>
+                    </ns15:Step>
+                    <ns15:Step>
+                        <ns15:Application.Module>SCUST.CustomerListQuery.RequestHandler</ns15:Application.Module>
+                        <ns15:VersionId>v5</ns15:VersionId>
+                        <ns15:TimeStamp>${generate.dateNow}</ns15:TimeStamp>
+                        <ns15:RoutingRole>SUCCESS</ns15:RoutingRole>
+                        <ns15:Comment></ns15:Comment>
+                    </ns15:Step>
+                </ns15:MessagePath>
+            </ns15:Audit>
+        </ns15:UCBRUHeaders>
+    </ns2:Header>
+    <ns2:Body>
+        <ns9:CustomerList>
+            <ns9:CustomerDetails>
+                <ns9:RelevanceTimestamp>${generate.dateNow}</ns9:RelevanceTimestamp>
+                <ns9:ShortName>SMA</ns9:ShortName>
+                <ns9:BranchCode>A05</ns9:BranchCode>
+                <ns9:OriginalBranchCode>A05</ns9:OriginalBranchCode>
+                <ns9:BranchRegion>ДО Ленинский</ns9:BranchRegion>
+                <ns9:Type>I</ns9:Type>
+                <ns9:CbType>15</ns9:CbType>
+                <ns9:Category>VIPP</ns9:Category>
+                <ns9:Status>O</ns9:Status>
+                <ns9:Segment>HNWI</ns9:Segment>
+                <ns9:Resident>Y</ns9:Resident>
+                <ns9:AccountOfficerCode>00EL</ns9:AccountOfficerCode>
+                <ns9:AccountOfficerName>Ермошина Ольга_Private Banking</ns9:AccountOfficerName>
+                <ns9:ChargeGroup>HNWI</ns9:ChargeGroup>
+                <ns9:PcChargeGroup>IS00</ns9:PcChargeGroup>
+                <ns9:RiskLevel>2</ns9:RiskLevel>
+                <ns9:LiabilityCustomerNum>${receive.id}</ns9:LiabilityCustomerNum>
+                <ns9:CountryCode>RU</ns9:CountryCode>
+                <ns9:ExposureCountryCode>RU</ns9:ExposureCountryCode>
+                <ns9:NationalityCountryCode>RU</ns9:NationalityCountryCode>
+                <ns9:LanguageCode>RUS</ns9:LanguageCode>
+                <ns9:OkatoCode>45</ns9:OkatoCode>
+                <ns9:Inn>7736${receive.id}</ns9:Inn>
+                <ns9:PrivateDetails>
+                    <ns9:FirstNameRus>МАРК</ns9:FirstNameRus>
+                    <ns9:LastNameRus>СЕКАМОВ</ns9:LastNameRus>
+                    <ns9:MiddleNameRus>АРКАДЬЕВИЧ</ns9:MiddleNameRus>
+                    <ns9:FirstNameEng>MARK</ns9:FirstNameEng>
+                    <ns9:LastNameEng>SEKAMOV</ns9:LastNameEng>
+                    <ns9:MiddleNameEng>ARKADIEVICH</ns9:MiddleNameEng>
+                    <ns9:Sex>M</ns9:Sex>
+                    <ns9:Vip>Y</ns9:Vip>
+                    <ns9:Staff>N</ns9:Staff>
+                    <ns9:BirthDate>1969-07-20</ns9:BirthDate>
+                    <ns9:Occupation>
+                        <ns9:Position>Ghj</ns9:Position>
+                        <ns9:EmployerName>ФГХРП-МАГ.8 МО РФ</ns9:EmployerName>
+                        <ns9:EmployerInn>5029026875</ns9:EmployerInn>
+                    </ns9:Occupation>
+                </ns9:PrivateDetails>
+                <ns9:AML>
+                    <ns9:Required>Y</ns9:Required>
+                    <ns9:TerrorStatus>N</ns9:TerrorStatus>
+                    <ns9:TerrorResult>P</ns9:TerrorResult>
+                </ns9:AML>
+                <ns9:Address>
+                    <ns9:Type>DOMICILE</ns9:Type>
+                    <ns9:CountryCode>RU</ns9:CountryCode>
+                    <ns9:CountryNameEng>Russian Federation</ns9:CountryNameEng>
+                    <ns9:RegionCode>77</ns9:RegionCode>
+                    <ns9:RegionName>Москва</ns9:RegionName>
+                    <ns9:CityType>Г</ns9:CityType>
+                    <ns9:CityName>МОСКВА</ns9:CityName>
+                    <ns9:StreetType>ПР-КТ</ns9:StreetType>
+                    <ns9:StreetName>ЛЕНИНСКИЙ</ns9:StreetName>
+                    <ns9:House>91</ns9:House>
+                    <ns9:Apartment>208</ns9:Apartment>
+                    <ns9:ZipCode>119313</ns9:ZipCode>
+                    <ns9:AddressFull>119313, Г. МОСКВА, ЛЕНИНСКИЙ ПР-КТ, д. 91, кв. 208</ns9:AddressFull>
+                </ns9:Address>
+                <ns9:Address>
+                    <ns9:Type>PERMANENT</ns9:Type>
+                    <ns9:CountryCode>RU</ns9:CountryCode>
+                    <ns9:CountryNameEng>Russian Federation</ns9:CountryNameEng>
+                    <ns9:RegionCode>77</ns9:RegionCode>
+                    <ns9:RegionName>Москва</ns9:RegionName>
+                    <ns9:CityType>Г</ns9:CityType>
+                    <ns9:CityName>МОСКВА</ns9:CityName>
+                    <ns9:StreetType>УЛ</ns9:StreetType>
+                    <ns9:StreetName>Ленинский</ns9:StreetName>
+                    <ns9:House>91</ns9:House>
+                    <ns9:ZipCode>119313</ns9:ZipCode>
+                    <ns9:AddressFull>119313, Г. МОСКВА, Ленинский УЛ, д. 91</ns9:AddressFull>
+                </ns9:Address>
+                <ns9:Address>
+                    <ns9:Type>BIRTH</ns9:Type>
+                    <ns9:CountryCode>RU</ns9:CountryCode>
+                    <ns9:CountryNameEng>Russian Federation</ns9:CountryNameEng>
+                    <ns9:RegionCode>77</ns9:RegionCode>
+                    <ns9:RegionName>Москва</ns9:RegionName>
+                    <ns9:CityType>Г</ns9:CityType>
+                    <ns9:CityName>МОСКВА</ns9:CityName>
+                    <ns9:AddressFull>Russian Federation, Г. МОСКВА</ns9:AddressFull>
+                </ns9:Address>
+                <ns9:Address>
+                    <ns9:Type>WORK</ns9:Type>
+                    <ns9:CountryCode>RU</ns9:CountryCode>
+                    <ns9:RegionCode>50</ns9:RegionCode>
+                    <ns9:RegionName>Московская</ns9:RegionName>
+                    <ns9:CityType>Г</ns9:CityType>
+                    <ns9:CityName>Мытищи</ns9:CityName>
+                    <ns9:StreetType>ПР-КТ</ns9:StreetType>
+                    <ns9:StreetName>Олимпийский</ns9:StreetName>
+                    <ns9:House>21</ns9:House>
+                    <ns9:Housing>1</ns9:Housing>
+                    <ns9:Building>к 1</ns9:Building>
+                    <ns9:AddressFull>Московская, Г. Мытищи, Олимпийский ПР-КТ, д. 21, корп. 1, стр. к 1</ns9:AddressFull>
+                </ns9:Address>
+                <ns9:ContactInfo>
+                    <ns9:DefaultMedia>MAIL</ns9:DefaultMedia>
+                    <ns9:Email>SMARK.FFRUITS@GMAIL.Com</ns9:Email>
+                    <ns9:Fax>4395175</ns9:Fax>
+                    <ns9:HomePhone>+4991382694</ns9:HomePhone>
+                    <ns9:WorkPhone>89515456144</ns9:WorkPhone>
+                    <ns9:MobilePhone>89263868707</ns9:MobilePhone>
+                </ns9:ContactInfo>
+                <ns9:Document>
+                    <ns9:Category>OTHER</ns9:Category>
+                    <ns9:Type>RP</ns9:Type>
+                    <ns9:Number>45 05 071293</ns9:Number>
+                    <ns9:Authority>ОТДЕЛОМ ВНУТРЕННИХ ДЕЛ ЛОМОНОСОВСКОГО РАЙОНА ГОРОДА МОСКВЫ</ns9:Authority>
+                    <ns9:DepartmentCode>772-069</ns9:DepartmentCode>
+                    <ns9:Place>ОТДЕЛОМ ВНУТРЕННИХ ДЕЛ ЛОМОНОСОВСКОГО РАЙОНА ГОРОДА МОСКВЫ</ns9:Place>
+                    <ns9:ValidFrom>2003-04-01</ns9:ValidFrom>
+                    <ns9:Cancelled>N</ns9:Cancelled>
+                </ns9:Document>
+                <ns9:Document>
+                    <ns9:Category>OTHER</ns9:Category>
+                    <ns9:Type>ZP</ns9:Type>
+                    <ns9:Number>50 0021117</ns9:Number>
+                    <ns9:Authority>MID RF RF</ns9:Authority>
+                    <ns9:Place>MID RF RF</ns9:Place>
+                    <ns9:ValidFrom>1997-04-07</ns9:ValidFrom>
+                    <ns9:Cancelled>N</ns9:Cancelled>
+                </ns9:Document>
+                <ns9:Document>
+                    <ns9:Category>PRIMARY_IDENTITY</ns9:Category>
+                    <ns9:Type>RP</ns9:Type>
+                    <ns9:Number>${receive.id:2:4} ${receive.id:4:6} ${receive.id:-6}</ns9:Number>
+                    <ns9:Authority>ОТДЕЛЕНИЕМ УФМС РОССИИ ПО ГОР.МОСКВЕ ПО РАЙОНУ ЛОМОНОСОВСКИЙ</ns9:Authority>
+                    <ns9:DepartmentCode>${receive.id:3:6}-${receive.id:0:3}</ns9:DepartmentCode>
+                    <ns9:Place>ОТДЕЛЕНИЕМ УФМС РОССИИ ПО ГОР.МОСКВЕ ПО РАЙОНУ ЛОМОНОСОВСКИЙ</ns9:Place>
+                    <ns9:ValidFrom>2014-07-29</ns9:ValidFrom>
+                    <ns9:Cancelled>N</ns9:Cancelled>
+                </ns9:Document>
+                <ns9:Document>
+                    <ns9:Category>OTHER</ns9:Category>
+                    <ns9:Type>ZP</ns9:Type>
+                    <ns9:Number>76 3794321</ns9:Number>
+                    <ns9:Authority>МВД 77610</ns9:Authority>
+                    <ns9:Place>МВД 77610</ns9:Place>
+                    <ns9:ValidFrom>2021-01-13</ns9:ValidFrom>
+                    <ns9:ValidTo>2031-01-13</ns9:ValidTo>
+                    <ns9:Cancelled>N</ns9:Cancelled>
+                </ns9:Document>
+            </ns9:CustomerDetails>
+        </ns9:CustomerList>
+    </ns2:Body>
+</ns2:Envelope>

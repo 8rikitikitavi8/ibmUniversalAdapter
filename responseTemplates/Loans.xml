@@ -1,0 +1,3 @@
+<gbo:CustomerLoans xmlns:gbo="urn:imb:gbo:v2">
+    <gbo:CustomerNo>${receive.id}</gbo:CustomerNo>
+</gbo:CustomerLoans>

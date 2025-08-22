@@ -1,0 +1,6 @@
+<ns2:Envelope xmlns:ns2="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns4="urn:ucbru:gbo:v3" xmlns:ns3="urn:ucbru:gbo:v3:st" xmlns:ns6="urn:ucbru:gbo:v5:spdep" xmlns:ns20="http://mfms.ru/mfmsgate/push/devices" xmlns:ns5="urn:ucbru:gbo:v5:loan" xmlns:ns8="urn:ucbru:gbo:v5:card" xmlns:ns7="urn:ucbru:gbo:v5:acc" xmlns:ns13="urn:ucbru:gbo:v5:push:devices:response" xmlns:ns9="urn:ucbru:gbo:v5:cif" xmlns:ns12="urn:ucbru:gbo:v5:push:devices:request" xmlns:ns11="urn:ucbru:gbo:v5:ordst" xmlns:ns10="urn:ucbru:gbo:v5:docst" xmlns:ns17="urn:imb:gbo:BSCardStm" xmlns:ns16="urn:ucbru:gbo:v4" xmlns:ns15="urn:ucbru:gbo:v5" xmlns:ns14="urn:ucbru:gbo:v5:sdpmt" xmlns:ns19="urn:ucbru:esb:srv:sms" xmlns:ns18="urn:imb:gbo:BSCardAuthorization">
+	<ns2:Header/>
+	<ns2:Body>
+		<ns20:RegisterDeviceResponse xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"/>
+	</ns2:Body>
+</ns2:Envelope>

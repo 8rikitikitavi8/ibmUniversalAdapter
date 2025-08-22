@@ -1,0 +1,29 @@
+<ns2:Envelope xmlns:ns2="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns4="urn:ucbru:gbo:v3" xmlns:ns3="urn:ucbru:gbo:v3:st" xmlns:ns6="urn:ucbru:gbo:v5:spdep" xmlns:ns20="http://mfms.ru/mfmsgate/push/devices" xmlns:ns5="urn:ucbru:gbo:v5:loan" xmlns:ns8="urn:ucbru:gbo:v5:card" xmlns:ns7="urn:ucbru:gbo:v5:acc" xmlns:ns13="urn:ucbru:gbo:v5:push:devices:response" xmlns:ns9="urn:ucbru:gbo:v5:cif" xmlns:ns12="urn:ucbru:gbo:v5:push:devices:request" xmlns:ns11="urn:ucbru:gbo:v5:ordst" xmlns:ns10="urn:ucbru:gbo:v5:docst" xmlns:ns17="urn:imb:gbo:BSCardStm" xmlns:ns16="urn:ucbru:gbo:v4" xmlns:ns15="urn:ucbru:gbo:v5" xmlns:ns14="urn:ucbru:gbo:v5:sdpmt" xmlns:ns19="urn:ucbru:esb:srv:sms" xmlns:ns18="urn:imb:gbo:BSCardAuthorization">
+    <ns2:Header>
+        <gbo:UCBRUHeaders xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gbo="urn:ucbru:gbo:v3">
+            <gbo:Audit>
+                <gbo:MessagePath>
+                    <gbo:Step>
+                        <gbo:Application.Module>SRVLOAN.CustomerLoansQuery</gbo:Application.Module>
+                        <gbo:VersionId>v3</gbo:VersionId>
+                        <gbo:TimeStamp>${generate.dateNow}</gbo:TimeStamp>
+                        <gbo:RoutingRole>START</gbo:RoutingRole>
+                        <gbo:Comment/>
+                    </gbo:Step>
+                    <gbo:Step>
+                        <gbo:Application.Module>SRVLOAN.CustomerLoansQuery</gbo:Application.Module>
+                        <gbo:VersionId>v3</gbo:VersionId>
+                        <gbo:TimeStamp>${generate.dateNow}</gbo:TimeStamp>
+                        <gbo:RoutingRole>SUCCESS</gbo:RoutingRole>
+                        <gbo:Comment/>
+                    </gbo:Step>
+                </gbo:MessagePath>
+            </gbo:Audit>
+        </gbo:UCBRUHeaders>
+    </ns2:Header>
+    <ns2:Body>
+        <ns4:CustomerLoans>
+            <ns4:CustomerNo>${receive.id}</ns4:CustomerNo>
+        </ns4:CustomerLoans>
+    </ns2:Body>
+</ns2:Envelope>
