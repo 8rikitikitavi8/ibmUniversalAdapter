@@ -1,0 +1,46 @@
+stub:
+  brokers:
+    - id: mq-plain
+      host: localhost
+      port: 1414
+      queueManager: QM1
+      channel: DEV.APP.SVRCONN
+      username: app
+      password: passw0rd
+      tls:
+        enabled: false
+    - id: mq-tls
+      host: localhost
+      port: 1415
+      queueManager: QM2
+      channel: SECURE.APP.SVRCONN
+      username: app
+      password: passw0rd
+      tls:
+        enabled: true
+        cipherSuite: TLS_AES_128_GCM_SHA256
+        truststorePath: /absolute/path/to/truststore.jks
+        truststorePassword: changeit
+        truststoreType: JKS
+        keystorePath: /absolute/path/to/keystore.jks
+        keystorePassword: changeit
+        keystoreType: JKS
+  routes:
+    - listenBrokerId: mq-plain
+      listenQueue: DEV.QUEUE.1
+      replyBrokerId: mq-plain
+      replyQueue: DEV.QUEUE.REPLIES
+      staticResponse: '{"status":"ok"}'
+    - listenBrokerId: mq-tls
+      listenQueue: SECURE.REQUESTS
+      replyBrokerId: mq-tls
+      replyQueue: SECURE.RESPONSES
+
+spring:
+  main:
+    banner-mode: console
+logging:
+  level:
+    root: info
+    org.springframework.jms: info
+    com.example.jmsstub: info
