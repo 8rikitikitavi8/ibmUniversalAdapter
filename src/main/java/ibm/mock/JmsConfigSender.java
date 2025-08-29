@@ -6,8 +6,10 @@ import com.ibm.mq.spring.boot.MQConfigurationProperties;
 import com.ibm.mq.spring.boot.MQConnectionFactoryCustomizer;
 import com.ibm.mq.spring.boot.MQConnectionFactoryFactory;
 import com.ibm.msg.client.jakarta.wmq.WMQConstants;
+import ibm.mock.models.DestinationWithProperties;
 import ibm.mock.models.Mq;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.ObjectProvider;
@@ -15,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.annotation.EnableJms;
+import org.springframework.jms.connection.CachingConnectionFactory;
 import org.springframework.jms.core.JmsTemplate;
 
 import java.util.ArrayList;
@@ -25,9 +28,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 @Configuration
 @EnableJms
+@Slf4j
 public class JmsConfigSender {
-
-    Logger logger = LoggerFactory.getLogger(QueueConsumer.class);
 
     @Autowired
     private ObjectProvider<List<MQConnectionFactoryCustomizer>> factoryCustomizers;
@@ -118,11 +120,20 @@ public class JmsConfigSender {
                     System.setProperty("javax.net.ssl.trustStorePassword", mq.getSslTrustStorePassword());
                 }
 //                mqQueueConnectionFactory.setAsyncExceptions(1);
-                JmsTemplate jmsTemplate = new JmsTemplate(mqQueueConnectionFactory);
-//                jmsTemplate.setDeliveryDelay(mq.getDestinationWithProperties().get(i).getSleep()*1000);
+                // 2) Оборачиваем в CachingConnectionFactory
+                CachingConnectionFactory cachingConnectionFactory = new CachingConnectionFactory(mqQueueConnectionFactory);
+                cachingConnectionFactory.setSessionCacheSize(10);
+                cachingConnectionFactory.setReconnectOnException(true);
+
+                JmsTemplate jmsTemplate = new JmsTemplate(cachingConnectionFactory);
                 jmsTemplates.add(jmsTemplate);
 
-                jmsMapTemplates.put(mq.getQueueManager() + "/" + mq.getDestinationWithProperties().get(i).getResponseQueue(), jmsTemplate);
+                // 4) Для каждой пары очередей просто кладём один и тот же jmsTemplate в map под ключом replyTo
+                for (DestinationWithProperties dwp : mq.getDestinationWithProperties()) {
+                    String key = mq.getQueueManager() + "/" + dwp.getResponseQueue();
+                    jmsMapTemplates.put(key, jmsTemplate);
+                }
+//                jmsMapTemplates.put(mq.getQueueManager() + "/" + mq.getDestinationWithProperties().get(i).getResponseQueue(), jmsTemplate);
             }
         }
 //        System.out.println("!!!!!!!!!!!!!!!!!!!");

@@ -1,11 +1,11 @@
 package ibm.mock.common;
 
-import com.zaxxer.hikari.HikariDataSource;
+
 import ibm.mock.QmProperties;
 import ibm.mock.QueueConsumer;
 import ibm.mock.sqlLite.SQLiteConnection;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -15,8 +15,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Component
+@Slf4j
 public class RequestParsing {
-    Logger logger = LoggerFactory.getLogger(QueueConsumer.class);
+
     @Autowired
     SQLiteConnection dbConnection;
     @Autowired
@@ -24,7 +25,7 @@ public class RequestParsing {
 
     public  Map<String, String> getMap(String message, String responceQueue, String databasePath, String queueManager) {
         long start = System.currentTimeMillis();
-        logger.info("Searching values in received message by regular expressions in db for "+ responceQueue);
+        log.debug("Searching values in received message by regular expressions in db for "+ responceQueue);
         Map<String, String> regExpressions = dbConnection.getRegexMap(dbConnection.getSqlConnections().get(qmProperties.databasePathFromQueueManager(queueManager)),responceQueue);
 //        Map<String, String> regExpressions = dbConnection.getRegexMap(dbConnection.getSqlConnections().get(databasePath),responceQueue);
         Map<String, String> result = new HashMap<>();
@@ -34,8 +35,8 @@ public class RequestParsing {
             if (matcher.find())
                 result.put(nameRegex.getKey(), matcher.group(1));
         }
-        logger.info("Found values: " + result);
-        logger.info("Time getMap: " + (System.currentTimeMillis()-start));
+        log.debug("Found values: " + result);
+        log.debug("Time getMap: " + (System.currentTimeMillis()-start));
         return result;
     }
 }

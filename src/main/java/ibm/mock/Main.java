@@ -13,13 +13,13 @@ public class Main {
     public static InfluxDB influxDB = InfluxDBFactory.connect("http://vs2645:8086");
 
     public static void main(String[] args) {
-        influxDB.setDatabase("MZO_ORK_test");
+        influxDB.setDatabase("MOCKS");
         influxDB.enableBatch(2000, 1000, TimeUnit.MILLISECONDS);
         SpringApplication.run(Main.class, args);
     }
 
     public static void writeToInflux(String operation, Long time) {
-        influxDB.write(Point.measurement("mzo_ork_test")
+        influxDB.write(Point.measurement("MCSP_ibm_mock")
                 .time(System.currentTimeMillis(),TimeUnit.MILLISECONDS)
                 .tag("name",operation)
                 .addField("ResponseTime",time)

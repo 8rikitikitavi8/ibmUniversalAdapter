@@ -7,19 +7,24 @@ import ibm.mock.common.Util;
 import ibm.mock.sqlLite.SQLiteConnection;
 import jakarta.jms.Message;
 import jakarta.jms.MessageListener;
+import jakarta.jms.Queue;
 import lombok.SneakyThrows;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import lombok.extern.slf4j.Slf4j;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
 
 import java.util.Map;
 
 @Component
+@Slf4j
 public class QueueConsumer implements MessageListener {
-    Logger logger = LoggerFactory.getLogger(QueueConsumer.class);
+//    Logger logger = LoggerFactory.getLogger(QueueConsumer.class);
     @Autowired
     private QmProperties qmProperties;
 
@@ -49,15 +54,25 @@ public class QueueConsumer implements MessageListener {
 //        System.out.println("Received from " + queueManeger + ": " + text);
 //    }
 
-    @SneakyThrows
+    @Async("jmsAsyncExecutor")
     @Override
     public void onMessage(Message message) {
+        try {
+            processMessageAsync(message);
+            // Вручную подтверждаем сообщение после успешной обработки
+            message.acknowledge();
+        } catch (Exception e) {
+            log.error("Message processing failed", e);
+            // При ошибке - не подтверждаем, сообщение вернется в очередь
+        }
+    }
+
+    @SneakyThrows
+    public void processMessageAsync(Message message) {
         Long start = System.currentTimeMillis();
-        logger.info("Message recieved");
-//        logger.info("message" + message.getBody(String.class));
-//        logger.info("message: " + message);
-        logger.info("message ReplyTo: " + message.getJMSReplyTo());
-        logger.info("message getJMSMessageID: " + message.getJMSMessageID());
+        try {
+        log.debug("message ReplyTo: " + message.getJMSReplyTo());
+        log.info("received message from queue {}: messageID = {}, correlationID = {}", ((Queue)message.getJMSDestination()).getQueueName(), message.getJMSMessageID(), message.getJMSCorrelationID());
 
         String replyToRaw = String.valueOf(message.getJMSReplyTo());
 
@@ -65,7 +80,7 @@ public class QueueConsumer implements MessageListener {
         String responceQueue = replyTo.split("/")[1];
         String[] requestQueueArr = responceQueue.split("RESPONSE");
         String requestQueueBeforeAliasOperation = requestQueueArr[0] + "REQUEST";
-        logger.info("requestQueueBeforeAliasOperation: " + requestQueueBeforeAliasOperation);
+        log.debug("requestQueueBeforeAliasOperation: " + requestQueueBeforeAliasOperation);
         String requestQueue = null;
         if (!qmProperties.getRequestQueuesFromConfigFile().contains(requestQueueBeforeAliasOperation)) {
             requestQueue = util.getAliasQueue(requestQueueBeforeAliasOperation);
@@ -87,6 +102,10 @@ public class QueueConsumer implements MessageListener {
 //        String destination = message.getJMSDestination().toString().substring(9,34) + "RESPONSE";
 //        logger.info("responseBody: " + responseBody);
         messageSender.sendMessage(responceQueue, responseBody, replyTo, correlationId, start);
+        } catch (Exception e) {
+            log.error("Error processing message: {}", message, e);
+
+        }
     }
 
 }

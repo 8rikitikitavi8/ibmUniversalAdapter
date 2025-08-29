@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mq:AnswerMessage xmlns:mq="MQMessage" departmentID="${receive.department_id}" processID="${receive.process_id}" serviceID="${receive.service_id}" systemID="${receive.system_id}">
+    <mq:Parameters>
+        <mq:Parameter Key="hasMore" Value="false"/>
+        <mq:Parameter Key="JMSCorrelationID" Value="${receive.corrId}"/>
+        <mq:Parameter Key="EPOV" Value="None"/>
+        <mq:Parameter Key="senderIdentifier" Value="30f0f3"/>
+        <mq:Parameter Key="queueDestination" Value="UCBRU.P2P.EUC.BSSEGG.GISGMP30.REQUEST"/>
+        <mq:Parameter Key="timeStamp" Value="${generate.dateNow}"/>
+        <mq:Parameter Key="requestID" Value="${receive.process_id}"/>
+        <mq:Parameter Key="docType" Value="positiveResponse"/>
+        <mq:Parameter Key="EPSP" Value="None"/>
+        <mq:Parameter Key="EPSmev" Value="Valid"/>
+        <mq:Parameter Key="JMSMessageID" Value="${receive.messId}"/>
+        <mq:Parameter Key="responseId" Value="I_bd6317fb-d2f8-9cb4-08ad-2462037b6635"/>
+    </mq:Parameters>
+    <mq:Answer>ICA8P3htbCB2ZXJzaW9uPSIxLjAiIGVuY29kaW5nPSJVVEYtOCI/Pg0KICA8YmQ6YkRhdGEgeG1sbnM6YmQ9Imh0dHA6Ly93d3cuYnNzLWUuY29tL3Byb2R1Y3RzL2Jzcy1lZ2cvVU5JRk9fMi4wX0NoYXJnZXMiPg0KICAgPG5zMTpFeHBvcnRDaGFyZ2VzUmVzcG9uc2UgeG1sbnM6bnMxPSJ1cm46Ly9yb3NrYXpuYS5ydS9naXNnbXAveHNkL3NlcnZpY2VzL2V4cG9ydC1jaGFyZ2VzLzIuNC4wIiB4bWxuczpjaGc9Imh0dHA6Ly9yb3NrYXpuYS5ydS9naXNnbXAveHNkL0NoYXJnZS8yLjQuMCIgeG1sbnM6Y29tPSJodHRwOi8vcm9za2F6bmEucnUvZ2lzZ21wL3hzZC9Db21tb24vMi40LjAiIHhtbG5zOm9yZz0iaHR0cDovL3Jvc2them5hLnJ1L2dpc2dtcC94c2QvT3JnYW5pemF0aW9uLzIuNC4wIiBJZD0iREJDNDE5MkQtOURENy00NENELTg5ODMtOEJGQTEzMUNDRkE1IiBScUlkPSJHXzRiNzVhY2Y4LWYyYzgtNDU5NS1iZGE1LTc1MjhkOTJmYTE0NiIgaGFzTW9yZT0iZmFsc2UiIHJlY2lwaWVudElkZW50aWZpZXI9IjMwZjBmMyIgdGltZXN0YW1wPSIyMDIzLTA3LTIwVDE4OjEwOjA1LjQyMSswMzowMCI+DQogICAgPG5zMTpDaGFyZ2VJbmZvIGFja25vd2xlZGdtZW50U3RhdHVzPSIyIiBhbW91bnRUb1BheT0iLTk3OTIxMiIgYmlsbERhdGU9IjIwMjItMDYtMjVUMTE6MTg6MzAuMDAwKzAzOjAwIiBrYms9IjAwMDAwMDAwMDAwMDAwMDAwMTMwIiBva3Rtbz0iNDY3ODMwMDAiIHB1cnBvc2U9IsOQxb7DkMK/w5DCu8OQwrDDkeKAmsOQwrAgw5DCtMOQwrXDkeKAmsORwoHDkMK6w5DCvsOQwrPDkMK+IMORwoHDkMKww5DCtMOQwrAiIHN1cHBsaWVyQmlsbElEPSIxODIwNzczMzEzMDQxMzU5MDA2MyIgdG90YWxBbW91bnQ9IjM2NTAwIj4NCiAgICAgPG9yZzpQYXllZSBpbm49IjUwNDcwNTM5MjAiIGtwcD0iNTA0NzAxMDAxIiBuYW1lPSLDkMKgw5DCoiDDkOKAusOQwrDDkMKxw5HCgSIgb2dybj0iMTAzNTAwOTU2NzQ1MCI+DQogICAgICA8Y29tOk9yZ0FjY291bnQgYWNjb3VudE51bWJlcj0iNDAxMDE4MTA1MDAwMDAwMTAwMDAiPg0KICAgICAgIDxjb206QmFuayBiaWs9IjA0ODQwNTAwMSIgbmFtZT0iw5DFvsOR4oCaw5DCtMOQwrXDkMK7w5DCtcOQwr3DkMK4w5DCtSDDouKCrOKAnCDDkMucw5DigJggw5DCoMOQwrXDkcKBw5DCv8ORxpLDkMKxw5DCu8OQwrjDkMK6w5DCsCDDkMKQw5DCu8OR4oCaw5DCsMOQwrkgw5DCsy4gw5DigJzDkMK+w5HigqzDkMK9w5DCvi3DkMKQw5DCu8OR4oCaw5DCsMOQwrnDkcKBw5DCuiIvPg0KICAgICAgPC9jb206T3JnQWNjb3VudD4NCiAgICAgPC9vcmc6UGF5ZWU+DQogICAgIDxjaGc6UGF5ZXIgcGF5ZXJJZGVudGlmaWVyPSIxMjEwMDAwMDAwNTI1MjY2MzA4MzM5IiBwYXllck5hbWU9IsOQwqLDkMK1w5HCgcOR4oCaw5DCvsOQwrLDkeKAucOQwrkgw5DCv8OQwrvDkMKww5HigJrDkMK1w5DCu8ORxZLDkeKAsMOQwrjDkMK6Ii8+DQogICAgIDxjaGc6QnVkZ2V0SW5kZXggcGF5dFJlYXNvbj0iMCIgc3RhdHVzPSIxMyIgdGF4RG9jRGF0ZT0iMCIgdGF4RG9jTnVtYmVyPSIwIiB0YXhQZXJpb2Q9IjAiLz4NCiAgICAgPGNvbTpDaGFuZ2VTdGF0dXNJbmZvPg0KICAgICAgPGNvbTpNZWFuaW5nPjE8L2NvbTpNZWFuaW5nPg0KICAgICA8L2NvbTpDaGFuZ2VTdGF0dXNJbmZvPg0KICAgIDwvbnMxOkNoYXJnZUluZm8+DQogICA8L25zMTpFeHBvcnRDaGFyZ2VzUmVzcG9uc2U+DQogIDwvYmQ6YkRhdGE+</mq:Answer>
+</mq:AnswerMessage>

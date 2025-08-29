@@ -6,8 +6,8 @@ import ibm.mock.models.DestinationWithProperties;
 import ibm.mock.models.Mq;
 import jakarta.annotation.PostConstruct;
 import lombok.Data;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
@@ -23,8 +23,9 @@ import static com.ibm.msg.client.jakarta.wmq.common.CommonConstants.WMQ_SSL_CIPH
 @ConfigurationProperties("ibm.mq")
 @Configuration
 @Component
+@Slf4j
 public class QmProperties {
-    Logger logger = LoggerFactory.getLogger(QueueConsumer.class);
+
     private List<Mq> mqs;
 
     Set<String> requestQueuesFromConfigFile = new HashSet<>();
@@ -32,17 +33,17 @@ public class QmProperties {
     @PostConstruct
     public void testProps() {
         for (Mq mq : mqs) {
-            logger.info(mq.getQueueManager());
+            log.debug(mq.getQueueManager());
 //            broker.getDwp().stream().forEach(e->System.out.println(e.getRequestQueue()));
         }
         for (Mq mq : mqs) {
             for (int i = 0; i < mq.getDestinationWithProperties().size(); i++) {
-                logger.info(mq.getDestinationWithProperties().get(i).getRequestQueue());
+                log.debug(mq.getDestinationWithProperties().get(i).getRequestQueue());
             }
         }
         for (Mq mq : mqs) {
             for (int i = 0; i < mq.getDestinationWithProperties().size(); i++) {
-                logger.info(mq.getDestinationWithProperties().get(i).getRequestQueue());
+                log.debug(mq.getDestinationWithProperties().get(i).getRequestQueue());
             }
         }
 

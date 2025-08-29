@@ -31,6 +31,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-29T09:15:12.774064</ns14:DateTime>
                 <ns14:BusinessMessageId>B${receive.id}0504400000014II00000001</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}</ns14:TransactionId>
                 <ns14:Direction>I</ns14:Direction>
                 <ns14:Status>PROCESSING</ns14:Status>
                 <ns14:Type>C2CPull</ns14:Type>
@@ -48,6 +49,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-29T08:59:13.710985</ns14:DateTime>
                 <ns14:BusinessMessageId>A${receive.id}0495200000004II00000001</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}1</ns14:TransactionId>
                 <ns14:Direction>I</ns14:Direction>
                 <ns14:Status>PROCESSING</ns14:Status>
                 <ns14:Type>C2CPull</ns14:Type>
@@ -65,6 +67,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-28T12:18:06.005536</ns14:DateTime>
                 <ns14:BusinessMessageId>A${receive.id}57559010000047F24E9414C</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}2</ns14:TransactionId>
                 <ns14:Direction>O</ns14:Direction>
                 <ns14:Status>SUCCESS</ns14:Status>
                 <ns14:Type>C2CPush</ns14:Type>
@@ -82,6 +85,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-27T10:50:23.172533</ns14:DateTime>
                 <ns14:BusinessMessageId>B${receive.id}04624010000147F24E9414C</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}3</ns14:TransactionId>
                 <ns14:Direction>O</ns14:Direction>
                 <ns14:Status>SUCCESS</ns14:Status>
                 <ns14:Type>C2CPush</ns14:Type>
@@ -99,6 +103,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-27T10:48:13.322819</ns14:DateTime>
                 <ns14:BusinessMessageId>B${receive.id}54446010000147F24E9414C</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}4</ns14:TransactionId>
                 <ns14:Direction>O</ns14:Direction>
                 <ns14:Status>SUCCESS</ns14:Status>
                 <ns14:Type>C2CPush</ns14:Type>
@@ -116,6 +121,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-23T18:22:54.705252</ns14:DateTime>
                 <ns14:BusinessMessageId>A${receive.id}52842010000047F24E9414C</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}5</ns14:TransactionId>
                 <ns14:Direction>O</ns14:Direction>
                 <ns14:Status>ERROR</ns14:Status>
                 <ns14:Type>QRStat</ns14:Type>
@@ -137,6 +143,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-16T16:34:27.095035</ns14:DateTime>
                 <ns14:BusinessMessageId>B${receive.id}14586010000147F24E9414C</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}6</ns14:TransactionId>
                 <ns14:Direction>O</ns14:Direction>
                 <ns14:Status>SUCCESS</ns14:Status>
                 <ns14:Type>C2CPush</ns14:Type>
@@ -154,6 +161,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-16T14:09:30.956312</ns14:DateTime>
                 <ns14:BusinessMessageId>B${receive.id}21723010000147F24E9414C</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}7</ns14:TransactionId>
                 <ns14:Direction>O</ns14:Direction>
                 <ns14:Status>SUCCESS</ns14:Status>
                 <ns14:Type>C2CPush</ns14:Type>
@@ -171,6 +179,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-15T14:07:01.670694</ns14:DateTime>
                 <ns14:BusinessMessageId>B${receive.id}56130010000147F24E9414C</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}8</ns14:TransactionId>
                 <ns14:Direction>O</ns14:Direction>
                 <ns14:Status>SUCCESS</ns14:Status>
                 <ns14:Type>C2CPush</ns14:Type>
@@ -188,6 +197,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-15T14:06:40.636687</ns14:DateTime>
                 <ns14:BusinessMessageId>B${receive.id}32921010000147F24E9414C</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}9</ns14:TransactionId>
                 <ns14:Direction>O</ns14:Direction>
                 <ns14:Status>SUCCESS</ns14:Status>
                 <ns14:Type>C2CPush</ns14:Type>
@@ -205,6 +215,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-15T14:01:27.393861</ns14:DateTime>
                 <ns14:BusinessMessageId>B${receive.id}21699010000147F24E9414C</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}10</ns14:TransactionId>
                 <ns14:Direction>O</ns14:Direction>
                 <ns14:Status>SUCCESS</ns14:Status>
                 <ns14:Type>C2CPush</ns14:Type>
@@ -222,6 +233,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-15T14:01:06.497343</ns14:DateTime>
                 <ns14:BusinessMessageId>B${receive.id}58843010000147F24E9414C</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}11</ns14:TransactionId>
                 <ns14:Direction>O</ns14:Direction>
                 <ns14:Status>SUCCESS</ns14:Status>
                 <ns14:Type>C2CPush</ns14:Type>
@@ -239,6 +251,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-15T13:28:23.613798</ns14:DateTime>
                 <ns14:BusinessMessageId>B${receive.id}16000010000147F24E9414C</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}12</ns14:TransactionId>
                 <ns14:Direction>O</ns14:Direction>
                 <ns14:Status>SUCCESS</ns14:Status>
                 <ns14:Type>C2CPush</ns14:Type>
@@ -256,6 +269,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-15T11:40:15.813266</ns14:DateTime>
                 <ns14:BusinessMessageId>B${receive.id}05813050000147F24E9414C</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}13</ns14:TransactionId>
                 <ns14:Direction>O</ns14:Direction>
                 <ns14:Status>SUCCESS</ns14:Status>
                 <ns14:Type>C2CPush</ns14:Type>
@@ -273,6 +287,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-14T15:12:15.036256</ns14:DateTime>
                 <ns14:BusinessMessageId>B${receive.id}07313010000147F24E9414C</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}14</ns14:TransactionId>
                 <ns14:Direction>O</ns14:Direction>
                 <ns14:Status>SUCCESS</ns14:Status>
                 <ns14:Type>C2CPush</ns14:Type>
@@ -290,6 +305,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-14T13:44:32.416179</ns14:DateTime>
                 <ns14:BusinessMessageId>B${receive.id}22282010000147F24E9414C</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}15</ns14:TransactionId>
                 <ns14:Direction>O</ns14:Direction>
                 <ns14:Status>SUCCESS</ns14:Status>
                 <ns14:Type>C2CPush</ns14:Type>
@@ -307,6 +323,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-14T13:40:28.269212</ns14:DateTime>
                 <ns14:BusinessMessageId>B${receive.id}08949010000147F24E9414C</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}16</ns14:TransactionId>
                 <ns14:Direction>O</ns14:Direction>
                 <ns14:Status>SUCCESS</ns14:Status>
                 <ns14:Type>C2CPush</ns14:Type>
@@ -324,6 +341,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-10T10:46:52.320394</ns14:DateTime>
                 <ns14:BusinessMessageId>B${receive.id}43970010000147F24E9414C</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}17</ns14:TransactionId>
                 <ns14:Direction>O</ns14:Direction>
                 <ns14:Status>SUCCESS</ns14:Status>
                 <ns14:Type>C2CPush</ns14:Type>
@@ -341,6 +359,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-10T08:28:30.683609</ns14:DateTime>
                 <ns14:BusinessMessageId>B${receive.id}23292010000147F24E9414C</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}18</ns14:TransactionId>
                 <ns14:Direction>O</ns14:Direction>
                 <ns14:Status>SUCCESS</ns14:Status>
                 <ns14:Type>C2CPush</ns14:Type>
@@ -358,6 +377,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-09T15:56:28.736817</ns14:DateTime>
                 <ns14:BusinessMessageId>B219212${receive.id}0000014II00000001</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}19</ns14:TransactionId>
                 <ns14:Direction>I</ns14:Direction>
                 <ns14:Status>PROCESSING</ns14:Status>
                 <ns14:Type>C2CPull</ns14:Type>
@@ -375,6 +395,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-09T15:42:11.441374</ns14:DateTime>
                 <ns14:BusinessMessageId>B219212420${receive.id}00147F24E9414C</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}20</ns14:TransactionId>
                 <ns14:Direction>O</ns14:Direction>
                 <ns14:Status>SUCCESS</ns14:Status>
                 <ns14:Type>C2CPush</ns14:Type>
@@ -392,6 +413,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-08T11:34:14.524386</ns14:DateTime>
                 <ns14:BusinessMessageId>B219008${receive.id}10000146517BE1DD5</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}21</ns14:TransactionId>
                 <ns14:Direction>O</ns14:Direction>
                 <ns14:Status>SUCCESS</ns14:Status>
                 <ns14:Type>C2CPush</ns14:Type>
@@ -409,6 +431,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-07T10:00:00</ns14:DateTime>
                 <ns14:BusinessMessageId>B999${receive.id}99999999999999AA9AA1</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}22</ns14:TransactionId>
                 <ns14:Direction>I</ns14:Direction>
                 <ns14:Status>SUCCESS</ns14:Status>
                 <ns14:Type>B2C</ns14:Type>
@@ -428,6 +451,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-06T15:16:11.883701</ns14:DateTime>
                 <ns14:BusinessMessageId>B21901${receive.id}010000146517BE1DD5</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}23</ns14:TransactionId>
                 <ns14:Direction>O</ns14:Direction>
                 <ns14:Status>SUCCESS</ns14:Status>
                 <ns14:Type>C2CPush</ns14:Type>
@@ -445,6 +469,7 @@
             <ns14:Operation>
                 <ns14:DateTime>2022-06-02T13:12:35.413268</ns14:DateTime>
                 <ns14:BusinessMessageId>B2182101${receive.id}0000146517BE1DD5</ns14:BusinessMessageId>
+				<ns14:TransactionId>${receive.id}24</ns14:TransactionId>
                 <ns14:Direction>O</ns14:Direction>
                 <ns14:Status>SUCCESS</ns14:Status>
                 <ns14:Type>C2CPush</ns14:Type>

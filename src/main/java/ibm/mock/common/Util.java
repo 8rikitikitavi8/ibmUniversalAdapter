@@ -5,25 +5,22 @@ import ibm.mock.QueueConsumer;
 import ibm.mock.models.Mq;
 import jakarta.annotation.PostConstruct;
 import lombok.Data;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Component;
 
 import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
+
 import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
 
 
 @Data
 @Component
+@Slf4j
 public class Util {
-    Logger logger = LoggerFactory.getLogger(QueueConsumer.class);
     @Autowired
     QmProperties qmProperties;
 
@@ -43,15 +40,15 @@ public class Util {
 ////        }
 //        return matcher.group(1);
         String[]strings = replyTo.split("/");
-        logger.info(String.valueOf(strings.length));
-        logger.info("strings[0]: " + strings[0]);
-        logger.info("strings[1]: " + strings[1]);
-        logger.info("strings[2]: " + strings[2]);
-        logger.info("strings[3]: " + strings[3]);
+        log.debug(String.valueOf(strings.length));
+        log.debug("strings[0]: " + strings[0]);
+        log.debug("strings[1]: " + strings[1]);
+        log.debug("strings[2]: " + strings[2]);
+        log.debug("strings[3]: " + strings[3]);
         String[] words = strings[3].split("\\?");
         String respqueue = words[0];
         String result = strings[2]+"/"+respqueue;
-        logger.info("result: "+ result);
+        log.debug("result: "+ result);
         return result;
     }
 
@@ -70,9 +67,9 @@ public class Util {
     public String getAliasQueue(String requestQueue){
         StringBuilder result = new StringBuilder();
         String[]strings = requestQueue.split("\\.");
-        logger.info("max index strings: "+ strings.length);
+        log.debug("max index strings: "+ strings.length);
         result.append(strings[0]).append(".SDPMT.V5.").append(strings[4]).append(".").append(strings[5]);
-        logger.info("requestQueue from Alias: "+ result);
+        log.debug("requestQueue from Alias: "+ result);
         return result.toString();
     }
 

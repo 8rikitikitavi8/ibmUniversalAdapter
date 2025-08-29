@@ -1,0 +1,36 @@
+<soapenv:Envelope xmlns:gbo="urn:ucbru:gbo:v4" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header>
+        <m:UCBRUHeaders xmlns:m="urn:ucbru:gbo:v4">
+            <m:Audit>
+                <m:MessagePath>
+                    <m:Step>
+                        <m:Application.Module>ACARDDetailsRestrict.SCARDDetailsRestrictQuery</m:Application.Module>
+                        <m:VersionId>v4</m:VersionId>
+                        <m:TimeStamp>${generate.dateNow}</m:TimeStamp>
+                        <m:RoutingRole>START</m:RoutingRole>
+                        <m:Comment/>
+                    </m:Step>
+                    <m:Step>
+                        <m:Application.Module>ACARDDetailsRestrict.SCARDDetailsRestrictResponse</m:Application.Module>
+                        <m:VersionId>v4</m:VersionId>
+                        <m:TimeStamp>${generate.dateNow}</m:TimeStamp>
+                        <m:RoutingRole>SUCCESS</m:RoutingRole>
+                        <m:Comment></m:Comment>
+                    </m:Step>
+                </m:MessagePath>
+            </m:Audit>
+        </m:UCBRUHeaders>
+    </soapenv:Header>
+    <soapenv:Body>
+        <gbo:SCARDDetailsRestrictResponse>
+            <gbo:RestrictMask>
+                <gbo:Internet>0</gbo:Internet>
+                <gbo:PurchaseRu>0</gbo:PurchaseRu>
+                <gbo:PurchaseAbroad>0</gbo:PurchaseAbroad>
+                <gbo:CashOperRu>0</gbo:CashOperRu>
+                <gbo:CashOperAbroad>0</gbo:CashOperAbroad>
+            </gbo:RestrictMask>
+            <gbo:Flag>0</gbo:Flag>
+        </gbo:SCARDDetailsRestrictResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

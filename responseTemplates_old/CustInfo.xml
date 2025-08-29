@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gbo:Customer xmlns:gbo="urn:ucbru:gbo:v3">
+  <gbo:CustomerNum>00923947</gbo:CustomerNum>
+  <gbo:ShortName>MKA</gbo:ShortName>
+  <gbo:BranchCode>A01</gbo:BranchCode>
+  <gbo:OriginalBranchCode>A01</gbo:OriginalBranchCode>
+  <gbo:Type>I</gbo:Type>
+  <gbo:CbType>15</gbo:CbType>
+  <gbo:Category>STAF</gbo:Category>
+  <gbo:Status>O</gbo:Status>
+  <gbo:Segment>STAFF</gbo:Segment>
+  <gbo:PublicIndicator>OTHR</gbo:PublicIndicator>
+  <gbo:BacaSegment>107330</gbo:BacaSegment>
+  <gbo:BacaDescription>Retail-Indiv-MassMar-Mass</gbo:BacaDescription>
+  <gbo:Resident>Y</gbo:Resident>
+  <gbo:Offshore>N</gbo:Offshore>
+  <gbo:ActivityType>2</gbo:ActivityType>
+  <gbo:AccountOfficerCode>003L</gbo:AccountOfficerCode>
+  <gbo:AccountOfficerName>йСМДХМЮ ю.х. лЮЯЯ 001</gbo:AccountOfficerName>
+  <gbo:ChargeGroup>STAF</gbo:ChargeGroup>
+  <gbo:PcChargeGroup>STAF</gbo:PcChargeGroup>
+  <gbo:RiskLevel>0</gbo:RiskLevel>
+  <gbo:LiabilityCustomerNum>00923947</gbo:LiabilityCustomerNum>
+  <gbo:CountryCode>RU</gbo:CountryCode>
+  <gbo:ExposureCountryCode>RU</gbo:ExposureCountryCode>
+  <gbo:NationalityCountryCode>RU</gbo:NationalityCountryCode>
+  <gbo:LanguageCode>RUS</gbo:LanguageCode>
+  <gbo:OpenDate>2005-08-25</gbo:OpenDate>
+  <gbo:FirstAccountOpenDate>2005-08-25</gbo:FirstAccountOpenDate>
+  <gbo:OkatoCode>45</gbo:OkatoCode>
+  <gbo:Inn>770402170461</gbo:Inn>
+  <gbo:DefaultMedia>MAIL</gbo:DefaultMedia>
+  <gbo:Email>KMALTSEV@LIST.RU,Konstantin.Maltsev@unicreditgroup.ru</gbo:Email>
+  <gbo:Fax>2587256</gbo:Fax>
+  <gbo:DepartmentCode>RSE</gbo:DepartmentCode>
+  <gbo:PrivateDetails>
+    <gbo:FirstNameRus>йнмярюмрхм</gbo:FirstNameRus>
+    <gbo:LastNameRus>люкэжеб</gbo:LastNameRus>
+    <gbo:MiddleNameRus>юмдпеебхв</gbo:MiddleNameRus>
+    <gbo:FirstNameEng>KONSTANTIN</gbo:FirstNameEng>
+    <gbo:LastNameEng>MALTSEV</gbo:LastNameEng>
+    <gbo:MiddleNameEng>ANDREEVICH</gbo:MiddleNameEng>
+    <gbo:Sex>M</gbo:Sex>
+    <gbo:Vip>N</gbo:Vip>
+    <gbo:Staff>Y</gbo:Staff>
+    <gbo:BirthDate>1983-08-14</gbo:BirthDate>
+    <gbo:Mobile>+79255627482</gbo:Mobile>
+  </gbo:PrivateDetails>
+  <gbo:AML>
+    <gbo:Required>Y</gbo:Required>
+    <gbo:TerrorStatus>N</gbo:TerrorStatus>
+    <gbo:TerrorResult>NFND</gbo:TerrorResult>
+  </gbo:AML>
+  <gbo:MIS>
+    <gbo:Group>R_S_MC</gbo:Group>
+  </gbo:MIS>
+  <gbo:Address>
+    <gbo:Type>DOMICILE</gbo:Type>
+    <gbo:CountryCbrCode>643</gbo:CountryCbrCode>
+    <gbo:CountryCode>RU</gbo:CountryCode>
+    <gbo:CountryNameEng>Russian Federation</gbo:CountryNameEng>
+    <gbo:CountryName>пНЯЯХЪ</gbo:CountryName>
+    <gbo:RegionCode>77</gbo:RegionCode>
+    <gbo:RegionName>ц. лняйбю</gbo:RegionName>
+    <gbo:CityType>ц</gbo:CityType>
+    <gbo:CityName>лняйбю</gbo:CityName>
+    <gbo:StreetType>ск</gbo:StreetType>
+    <gbo:StreetName>йняшцхмю</gbo:StreetName>
+    <gbo:House>5</gbo:House>
+    <gbo:Apartment>202</gbo:Apartment>
+    <gbo:AddressFull>ц. лняйбю, йняшцхмю ск, Д. 5, ЙБ. 202</gbo:AddressFull>
+  </gbo:Address>
+  <gbo:Address>
+    <gbo:Type>PERMANENT</gbo:Type>
+    <gbo:CountryCbrCode>643</gbo:CountryCbrCode>
+    <gbo:CountryCode>RU</gbo:CountryCode>
+    <gbo:CountryNameEng>Russian Federation</gbo:CountryNameEng>
+    <gbo:CountryName>пНЯЯХЪ</gbo:CountryName>
+    <gbo:RegionCode>77</gbo:RegionCode>
+    <gbo:RegionName>ц</gbo:RegionName>
+    <gbo:CityType>ц</gbo:CityType>
+    <gbo:CityName>лняйбю</gbo:CityName>
+    <gbo:StreetType>ск</gbo:StreetType>
+    <gbo:StreetName>йняшцхмю</gbo:StreetName>
+    <gbo:House>5</gbo:House>
+    <gbo:Apartment>202</gbo:Apartment>
+    <gbo:ZipCode>119334</gbo:ZipCode>
+    <gbo:AddressFull>119334, ц. лняйбю, йняшцхмю ск, Д. 5, ЙБ. 202</gbo:AddressFull>
+  </gbo:Address>
+  <gbo:Address>
+    <gbo:Type>CORRESPONDENCE</gbo:Type>
+    <gbo:CountryCode>RU</gbo:CountryCode>
+    <gbo:CountryNameEng>Russian Federation</gbo:CountryNameEng>
+    <gbo:CountryName>пНЯЯХЪ</gbo:CountryName>
+    <gbo:AddressFull>UL.KOSYGINA,d.5-202G.MOSKVA</gbo:AddressFull>
+    <gbo:AddressLine1>UL.KOSYGINA,d.5-202</gbo:AddressLine1>
+    <gbo:AddressLine2>G.MOSKVA</gbo:AddressLine2>
+    <gbo:NameLine1>MALTSEV KONSTANTIN</gbo:NameLine1>
+    <gbo:NameLine2>ANDREEVICH</gbo:NameLine2>
+  </gbo:Address>
+  <gbo:Address>
+    <gbo:Type>BIRTH</gbo:Type>
+    <gbo:CountryCode>RU</gbo:CountryCode>
+    <gbo:CountryNameEng>Russian Federation</gbo:CountryNameEng>
+    <gbo:CountryName>пНЯЯХЪ</gbo:CountryName>
+    <gbo:RegionCode>77</gbo:RegionCode>
+    <gbo:RegionName>ц</gbo:RegionName>
+    <gbo:CityType>ц</gbo:CityType>
+    <gbo:CityName>лняйбю</gbo:CityName>
+    <gbo:AddressFull>Russian Federation, ц. лняйбю</gbo:AddressFull>
+  </gbo:Address>
+  <gbo:Document>
+    <gbo:Category>OTHER</gbo:Category>
+    <gbo:Type>ZP</gbo:Type>
+    <gbo:Number>70 4999556</gbo:Number>
+    <gbo:Authority>тля 77108</gbo:Authority>
+    <gbo:ValidFrom>2010-10-15</gbo:ValidFrom>
+    <gbo:ValidTo>2015-10-15</gbo:ValidTo>
+  </gbo:Document>
+  <gbo:Document>
+    <gbo:Category>OTHER</gbo:Category>
+    <gbo:Type>ZP</gbo:Type>
+    <gbo:Number>73 5962452</gbo:Number>
+    <gbo:Authority>тля 77606</gbo:Authority>
+    <gbo:ValidFrom>2014-08-01</gbo:ValidFrom>
+    <gbo:ValidTo>2024-08-01</gbo:ValidTo>
+  </gbo:Document>
+  <gbo:Document>
+    <gbo:Category>PRIMARY_IDENTITY</gbo:Category>
+    <gbo:Type>RP</gbo:Type>
+    <gbo:Number>45 06 395283</gbo:Number>
+    <gbo:Authority>нбд пюинмю юпаюр цнпнцдю лняйбш</gbo:Authority>
+    <gbo:DepartmentCode>772-111</gbo:DepartmentCode>
+    <gbo:ValidFrom>2003-12-04</gbo:ValidFrom>
+  </gbo:Document>
+  <gbo:UDF>
+    <gbo:Name>KYC_STATUS_INDV</gbo:Name>
+    <gbo:Value>OK</gbo:Value>
+  </gbo:UDF>
+  <gbo:UDF>
+    <gbo:Name>AccOfficerEmail</gbo:Name>
+    <gbo:Value>Aleksandra.Kundina@unicredit.ru</gbo:Value>
+  </gbo:UDF>
+  <gbo:Identifiers>
+    <gbo:ObjectType>Customer</gbo:ObjectType>
+    <gbo:Identifier>
+      <gbo:Value>00923947</gbo:Value>
+      <gbo:System>
+        <gbo:Name>FCC</gbo:Name>
+      </gbo:System>
+    </gbo:Identifier>
+    <gbo:Identifier>
+      <gbo:Value>923947</gbo:Value>
+      <gbo:System>
+        <gbo:Name>MIDAS</gbo:Name>
+      </gbo:System>
+    </gbo:Identifier>
+  </gbo:Identifiers>
+  <gbo:AccessHistory>
+    <gbo:Record>
+      <gbo:User>SYSTEM</gbo:User>
+      <gbo:DateTime>2022-07-19T00:00:00</gbo:DateTime>
+      <gbo:AccessType>Modification</gbo:AccessType>
+    </gbo:Record>
+    <gbo:Record>
+      <gbo:User>SYSTEM</gbo:User>
+      <gbo:DateTime>2022-07-19T00:00:00</gbo:DateTime>
+      <gbo:AccessType>Authorization</gbo:AccessType>
+    </gbo:Record>
+  </gbo:AccessHistory>
+</gbo:Customer>

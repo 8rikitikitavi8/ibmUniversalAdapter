@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Имя файла лога -->
+    <property name="LOG_FILE" value="logs/MCSPibmMock.log" />
+
+    <!-- Паттерн для форматирования логов -->
+    <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n" />
+
+    <!-- Appender для записи в файл -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_FILE}</file>
+
+        <!-- Политика ротации файлов -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Имя архивированного файла -->
+            <fileNamePattern>${LOG_FILE}.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+
+            <!-- Хранение логов за последние 30 дней -->
+            <maxHistory>30</maxHistory>
+
+            <!-- Общий объем архивов не должен превышать 1 GB -->
+            <totalSizeCap>1GB</totalSizeCap>
+
+            <!-- Политика ротации по размеру файла -->
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!-- Ротация при достижении 15 MB -->
+                <maxFileSize>15MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+
+        <!-- Формат логов -->
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Уровень логирования -->
+    <root level="DEBUG">
+        <appender-ref ref="FILE" />
+    </root>
+
+</configuration>

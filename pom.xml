@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>IbmQueueEmulatorSpring</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>MCSP_ibm_Mock</artifactId>
+    <version>1.0</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -60,12 +60,12 @@
             <version>3.0.6</version>
         </dependency>
 
-        <dependency>
-            <groupId>javax.jms</groupId>
-            <artifactId>javax.jms-api</artifactId>
-            <version>2.0.1</version>
-        </dependency>
-<!--!-->
+        <!--        <dependency>-->
+        <!--            <groupId>javax.jms</groupId>-->
+        <!--            <artifactId>javax.jms-api</artifactId>-->
+        <!--            <version>2.0.1</version>-->
+        <!--        </dependency>-->
+        <!--!-->
         <dependency>
             <groupId>commons-beanutils</groupId>
             <artifactId>commons-beanutils</artifactId>
@@ -133,11 +133,11 @@
             <scope>provided</scope>
         </dependency>
 
-        <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
-            <version>4.0.3</version>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>com.zaxxer</groupId>-->
+        <!--            <artifactId>HikariCP</artifactId>-->
+        <!--            <version>4.0.3</version>-->
+        <!--        </dependency>-->
 
         <dependency>
             <groupId>org.xerial</groupId>
@@ -162,6 +162,18 @@
             <artifactId>slf4j-simple</artifactId>
             <version>2.0.7</version>
             <scope>test</scope>
+        </dependency>
+        <!--Mock metrics-->
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+            <version>1.9.0</version>
+        </dependency>
+        <!--Mock metrics-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>2.7.0</version>
         </dependency>
 
 

@@ -1,0 +1,178 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header>
+        <gbo:UCBRUHeaders xmlns:gbo="urn:ucbru:gbo:v5">
+            <gbo:Audit>
+                <gbo:MessagePath>
+                    <gbo:Step>
+                        <gbo:Application.Module>SCUST.CustomerListQuery.RequestHandler</gbo:Application.Module>
+                        <gbo:VersionId>v5</gbo:VersionId>
+                        <gbo:TimeStamp>${generate.dateNow}</gbo:TimeStamp>
+                        <gbo:RoutingRole>START</gbo:RoutingRole>
+                        <gbo:Comment></gbo:Comment>
+                    </gbo:Step>
+                    <gbo:Step>
+                        <gbo:Application.Module>SCUST.CustomerListQuery.RequestHandler</gbo:Application.Module>
+                        <gbo:VersionId>v5</gbo:VersionId>
+                        <gbo:TimeStamp>${generate.dateNow}</gbo:TimeStamp>
+                        <gbo:RoutingRole>SUCCESS</gbo:RoutingRole>
+                        <gbo:Comment></gbo:Comment>
+                    </gbo:Step>
+                </gbo:MessagePath>
+            </gbo:Audit>
+        </gbo:UCBRUHeaders>
+    </soapenv:Header>
+    <soapenv:Body>
+        <cif:CustomerList xmlns:cif="urn:ucbru:gbo:v5:cif">
+            <cif:CustomerDetails>
+                <cif:RelevanceTimestamp>${generate.dateNow}</cif:RelevanceTimestamp>
+                <cif:CustomerNum>${receive.id}</cif:CustomerNum>
+                <cif:ShortName>SMA</cif:ShortName>
+                <cif:BranchCode>A05</cif:BranchCode>
+                <cif:OriginalBranchCode>A05</cif:OriginalBranchCode>
+                <cif:BranchRegion>дн кЕМХМЯЙХИ</cif:BranchRegion>
+                <cif:Type>I</cif:Type>
+                <cif:CbType>15</cif:CbType>
+                <cif:Category>VIPP</cif:Category>
+                <cif:Status>O</cif:Status>
+                <cif:Dchbo>Y</cif:Dchbo>
+                <cif:Segment>HNWI</cif:Segment>
+                <cif:Resident>Y</cif:Resident>
+                <cif:AccountOfficerCode>00EL</cif:AccountOfficerCode>
+                <cif:AccountOfficerName>еПЛНЬХМЮ нКЭЦЮ_Private Banking</cif:AccountOfficerName>
+                <cif:ChargeGroup>HNWI</cif:ChargeGroup>
+                <cif:PcChargeGroup>IS00</cif:PcChargeGroup>
+                <cif:RiskLevel>2</cif:RiskLevel>
+                <cif:LiabilityCustomerNum>${receive.id}</cif:LiabilityCustomerNum>
+                <cif:CountryCode>RU</cif:CountryCode>
+                <cif:ExposureCountryCode>RU</cif:ExposureCountryCode>
+                <cif:NationalityCountryCode>RU</cif:NationalityCountryCode>
+                <cif:LanguageCode>RUS</cif:LanguageCode>
+                <cif:OkatoCode>45</cif:OkatoCode>
+                <cif:Inn>7736${receive.id}</cif:Inn>
+                <cif:PrivateDetails>
+                    <cif:FirstNameRus>люпй</cif:FirstNameRus>
+                    <cif:LastNameRus>яейюлнб</cif:LastNameRus>
+                    <cif:MiddleNameRus>юпйюдэебхв</cif:MiddleNameRus>
+                    <cif:FirstNameEng>MARK</cif:FirstNameEng>
+                    <cif:LastNameEng>SEKAMOV</cif:LastNameEng>
+                    <cif:MiddleNameEng>ARKADIEVICH</cif:MiddleNameEng>
+                    <cif:Sex>M</cif:Sex>
+                    <cif:Vip>Y</cif:Vip>
+                    <cif:Staff>N</cif:Staff>
+                    <cif:BirthDate>1969-07-20</cif:BirthDate>
+                    <cif:Occupation>
+                        <cif:Position>Ghj</cif:Position>
+                        <cif:EmployerName>тцупо-люц.8 лн пт</cif:EmployerName>
+                        <cif:EmployerInn>5029026875</cif:EmployerInn>
+                    </cif:Occupation>
+                </cif:PrivateDetails>
+                <cif:AML>
+                    <cif:Required>Y</cif:Required>
+                    <cif:TerrorStatus>N</cif:TerrorStatus>
+                    <cif:TerrorResult>P</cif:TerrorResult>
+                    <cif:KYCStatus>OK</cif:KYCStatus>
+                    <cif:KYCStatusDate>${generate.dateNowWithoutTimezone}</cif:KYCStatusDate>
+                </cif:AML>
+                <cif:Address>
+                    <cif:Type>DOMICILE</cif:Type>
+                    <cif:CountryCode>RU</cif:CountryCode>
+                    <cif:CountryNameEng>Russian Federation</cif:CountryNameEng>
+                    <cif:RegionCode>77</cif:RegionCode>
+                    <cif:RegionName>лНЯЙБЮ</cif:RegionName>
+                    <cif:CityType>ц</cif:CityType>
+                    <cif:CityName>лняйбю</cif:CityName>
+                    <cif:StreetType>оп-йр</cif:StreetType>
+                    <cif:StreetName>кемхмяйхи</cif:StreetName>
+                    <cif:House>91</cif:House>
+                    <cif:Apartment>208</cif:Apartment>
+                    <cif:ZipCode>119313</cif:ZipCode>
+                    <cif:AddressFull>119313, ц. лняйбю, кемхмяйхи оп-йр, Д. 91, ЙБ. 208</cif:AddressFull>
+                </cif:Address>
+                <cif:Address>
+                    <cif:Type>PERMANENT</cif:Type>
+                    <cif:CountryCode>RU</cif:CountryCode>
+                    <cif:CountryNameEng>Russian Federation</cif:CountryNameEng>
+                    <cif:RegionCode>77</cif:RegionCode>
+                    <cif:RegionName>лНЯЙБЮ</cif:RegionName>
+                    <cif:CityType>ц</cif:CityType>
+                    <cif:CityName>лняйбю</cif:CityName>
+                    <cif:StreetType>ск</cif:StreetType>
+                    <cif:StreetName>кЕМХМЯЙХИ</cif:StreetName>
+                    <cif:House>91</cif:House>
+                    <cif:Apartment>208</cif:Apartment>
+                    <cif:ZipCode>119313</cif:ZipCode>
+                    <cif:AddressFull>119313, ц. лняйбю, кЕМХМЯЙХИ ск, Д. 91</cif:AddressFull>
+                </cif:Address>
+                <cif:Address>
+                    <cif:Type>BIRTH</cif:Type>
+                    <cif:CountryCode>RU</cif:CountryCode>
+                    <cif:CountryNameEng>Russian Federation</cif:CountryNameEng>
+                    <cif:RegionCode>77</cif:RegionCode>
+                    <cif:RegionName>лНЯЙБЮ</cif:RegionName>
+                    <cif:CityType>ц</cif:CityType>
+                    <cif:CityName>лняйбю</cif:CityName>
+                    <cif:AddressFull>Russian Federation, ц. лняйбю</cif:AddressFull>
+                </cif:Address>
+                <cif:Address>
+                    <cif:Type>WORK</cif:Type>
+                    <cif:CountryCode>RU</cif:CountryCode>
+                    <cif:RegionCode>59</cif:RegionCode>
+                    <cif:RegionName>лНЯЙНБЯЙЮЪ</cif:RegionName>
+                    <cif:GeoAreaName>дГЕПФХМЯЙХИ</cif:GeoAreaName>
+                    <cif:CityType>ц</cif:CityType>
+                    <cif:CityName>лШРХЫХ</cif:CityName>
+                    <cif:StreetType>оп-йр</cif:StreetType>
+                    <cif:StreetName>нКХЛОХИЯЙХИ</cif:StreetName>
+                    <cif:House>21</cif:House>
+                    <cif:AddressFull>лНЯЙНБЯЙЮЪ, ц. лШРХЫХ, нКХЛОХИЯЙХИ оп-йр, Д. 21, ЙНПО. 1, ЯРП. Й 1</cif:AddressFull>
+                </cif:Address>
+                <cif:ContactInfo>
+                    <cif:DefaultMedia>MAIL</cif:DefaultMedia>
+                    <cif:Email>SMARK.FFRUITS@GMAIL.COM</cif:Email>
+                    <cif:Fax>4395175</cif:Fax>
+                    <cif:WorkPhone>89515456114</cif:WorkPhone>
+                    <cif:MobilePhone>89263868707, 89023124254</cif:MobilePhone>
+                </cif:ContactInfo>
+                <cif:Document>
+                    <cif:Category>OTHER</cif:Category>
+                    <cif:Type>RP</cif:Type>
+                    <cif:Number>45 05 071293</cif:Number>
+                    <cif:Authority>нрдекнл бмсрпеммху дек кнлнмнянбяйнцн пюинмю цнпндю лняйбш</cif:Authority>
+                    <cif:DepartmentCode>772-069</cif:DepartmentCode>
+                    <cif:Place>нрдекнл бмсрпеммху дек кнлнмнянбяйнцн пюинмю цнпндю лняйбш</cif:Place>
+                    <cif:ValidFrom>2003-04-01</cif:ValidFrom>
+                    <cif:Cancelled>N</cif:Cancelled>
+                </cif:Document>
+                <cif:Document>
+                    <cif:Category>OTHER</cif:Category>
+                    <cif:Type>ZP</cif:Type>
+                    <cif:Number>50 0021117</cif:Number>
+                    <cif:Authority>MID RF RF</cif:Authority>
+                    <cif:Place>MID RF RF</cif:Place>
+                    <cif:ValidFrom>1997-04-07</cif:ValidFrom>
+                    <cif:Cancelled>N</cif:Cancelled>
+                </cif:Document>
+                <cif:Document>
+                    <cif:Category>PRIMARY_IDENTITY</cif:Category>
+                    <cif:Type>RP</cif:Type>
+                    <cif:Number>${receive.id:2:4} ${receive.id:4:6} ${receive.id:-6}</cif:Number>
+                    <cif:Authority>нрдекемхел стля пняяхх он цнп.лняйбе он пюинмс кнлнмнянбяйхи</cif:Authority>
+                    <cif:DepartmentCode>${receive.id:3:6}-${receive.id:0:3}</cif:DepartmentCode>
+                    <cif:Place>нрдекемхел стля пняяхх он цнп.лняйбе он пюинмс кнлнмнянбяйхи</cif:Place>
+                    <cif:ValidFrom>2014-07-29</cif:ValidFrom>
+                    <cif:Cancelled>N</cif:Cancelled>
+                </cif:Document>
+                <cif:Document>
+                    <cif:Category>OTHER</cif:Category>
+                    <cif:Type>ZP</cif:Type>
+                    <cif:Number>76 3794321</cif:Number>
+                    <cif:Authority>лбд 77610</cif:Authority>
+                    <cif:Place>лбд 77610</cif:Place>
+                    <cif:ValidFrom>2021-01-13</cif:ValidFrom>
+                    <cif:ValidTo>2031-01-13</cif:ValidTo>
+                    <cif:Cancelled>N</cif:Cancelled>
+                </cif:Document>
+            </cif:CustomerDetails>
+        </cif:CustomerList>
+    </soapenv:Body>
+</soapenv:Envelope>

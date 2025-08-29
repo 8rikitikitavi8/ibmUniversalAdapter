@@ -1,0 +1,56 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <SOAP-ENV:Header>
+        <gbo:UCBRUHeaders xmlns:gbo="urn:ucbru:gbo:v5">
+            <gbo:Audit>
+                <gbo:MessagePath>
+                    <gbo:Step>
+                        <gbo:Application.Module>SDPMTC2BPmtDetQuery.RequestHandler</gbo:Application.Module>
+                        <gbo:VersionId>urn:ucbru:gbo:v5</gbo:VersionId>
+                        <gbo:TimeStamp>2024-02-13T11:22:14.514+03:00</gbo:TimeStamp>
+                        <gbo:RoutingRole>START</gbo:RoutingRole>
+                        <gbo:Comment/>
+                    </gbo:Step>
+                    <gbo:Step>
+                        <gbo:Application.Module>SDPMTC2BPmtDetQuery.ResponseHandler</gbo:Application.Module>
+                        <gbo:VersionId>urn:ucbru:gbo:v5</gbo:VersionId>
+                        <gbo:TimeStamp>2024-02-13T11:22:15.465+03:00</gbo:TimeStamp>
+                        <gbo:RoutingRole>SUCCESS</gbo:RoutingRole>
+                        <gbo:Comment></gbo:Comment>
+                    </gbo:Step>
+                </gbo:MessagePath>
+            </gbo:Audit>
+        </gbo:UCBRUHeaders>
+    </SOAP-ENV:Header>
+    <SOAP-ENV:Body>
+        <sdpmt:SDPMTC2BPmtDet xmlns:sdpmt="urn:ucbru:gbo:v5:sdpmt">
+            <sdpmt:Query>
+                <sdpmt:PayerIdentity>0079263868707</sdpmt:PayerIdentity>
+                <sdpmt:QRId>BD1P002QKKTQAPVK89A9JVI0CQE9BEBG</sdpmt:QRId>
+            </sdpmt:Query>
+            <sdpmt:Details>
+                <sdpmt:QRId>BD1P002QKKTQAPVK89A9JVI0CQE9BEBG</sdpmt:QRId>
+                <sdpmt:Type>02</sdpmt:Type>
+                <sdpmt:Scenario>C2B_SUBSCRIPTION_WITH_PAYMENT</sdpmt:Scenario>
+                <sdpmt:OfficialName>OOO &quot;TEST TEST&quot;</sdpmt:OfficialName>
+                <sdpmt:TradeName>TEST TEST</sdpmt:TradeName>
+                <sdpmt:BankId>100000000030</sdpmt:BankId>
+                <sdpmt:OGRN>1025901975802</sdpmt:OGRN>
+                <sdpmt:INN>5919470121</sdpmt:INN>
+                <sdpmt:Amount>1110</sdpmt:Amount>
+                <sdpmt:Currency>RUB</sdpmt:Currency>
+                <sdpmt:Narrative>test test test</sdpmt:Narrative>
+                <sdpmt:Address>test 21</sdpmt:Address>
+                <sdpmt:MCC>5013</sdpmt:MCC>
+                <sdpmt:FraudScore>0000000000000000</sdpmt:FraudScore>
+                <sdpmt:SubscriptionPurpose>test</sdpmt:SubscriptionPurpose>
+                <sdpmt:SubscriptionToken>0EFB164F799903F8E063AC11E150E96C</sdpmt:SubscriptionToken>
+                <sdpmt:LegalEntityId>EA0000001348</sdpmt:LegalEntityId>
+                <sdpmt:PayerAccountIdentity>
+                    <sdpmt:CBAccount>40817810450010714090</sdpmt:CBAccount>
+                </sdpmt:PayerAccountIdentity>
+                <sdpmt:MerchantId>MA0000001719</sdpmt:MerchantId>
+                <sdpmt:CountryCode>RU</sdpmt:CountryCode>
+            </sdpmt:Details>
+        </sdpmt:SDPMTC2BPmtDet>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

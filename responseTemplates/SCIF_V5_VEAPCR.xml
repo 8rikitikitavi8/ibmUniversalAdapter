@@ -1,0 +1,36 @@
+<ns2:Envelope xmlns:ns2="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns4="urn:ucbru:gbo:v3" xmlns:ns3="urn:ucbru:gbo:v3:st" xmlns:ns6="urn:ucbru:gbo:v5:spdep" xmlns:ns20="urn:ucbru:esb:srv:sms" xmlns:ns5="urn:ucbru:gbo:v5:loan" xmlns:ns8="urn:ucbru:gbo:v5:card" xmlns:ns7="urn:ucbru:gbo:v5:acc" xmlns:ns13="urn:ucbru:gbo:v5:push:devices:response" xmlns:ns9="urn:ucbru:gbo:v5:cif" xmlns:ns12="urn:ucbru:gbo:v5:push:devices:request" xmlns:ns11="urn:ucbru:gbo:v5:ordst" xmlns:ns10="urn:ucbru:gbo:v5:docst" xmlns:ns21="http://mfms.ru/mfmsgate/push/devices" xmlns:ns17="urn:ucbru:gbo:v4" xmlns:ns16="urn:ucbru:gbo:v5" xmlns:ns15="urn:ucbru:gbo:v5:sdpmt" xmlns:ns14="urn:ucbru:gbo:v5:scust" xmlns:ns19="urn:imb:gbo:BSCardAuthorization" xmlns:ns18="urn:imb:gbo:BSCardStm">
+    <ns2:Header>
+        <ns16:UCBRUHeaders>
+            <ns16:Audit>
+                <ns16:MessagePath>
+                    <ns16:Step>
+                        <ns16:Application.Module>SCIF.VerifyApplicationCreate.RequestHandler</ns16:Application.Module>
+                        <ns16:VersionId>v5</ns16:VersionId>
+                        <ns16:TimeStamp>2025-02-13T16:24:18.907+02:00</ns16:TimeStamp>
+                        <ns16:RoutingRole>START</ns16:RoutingRole>
+                        <ns16:Comment></ns16:Comment>
+                    </ns16:Step>
+                    <ns16:Step>
+                        <ns16:Application.Module>SCIF.VerifyApplicationCreate.ResponseHandler</ns16:Application.Module>
+                        <ns16:VersionId>v5</ns16:VersionId>
+                        <ns16:TimeStamp>2025-02-13T16:24:19.246+02:00</ns16:TimeStamp>
+                        <ns16:RoutingRole>SUCCESS</ns16:RoutingRole>
+                        <ns16:Comment></ns16:Comment>
+                    </ns16:Step>
+                </ns16:MessagePath>
+            </ns16:Audit>
+        </ns16:UCBRUHeaders>
+    </ns2:Header>
+    <ns2:Body>
+        <ns10:VerifyApplicationCreateReply>
+            <ns10:OrderStatus>
+                <ns10:UID>LOGIN240521339</ns10:UID>
+                <ns10:Status>ACC-ABS</ns10:Status>
+                <ns10:Time>2025-02-13T16:24:19.245848</ns10:Time>
+                <ns10:System>SCIF</ns10:System>
+                <ns10:Sender>SCIF</ns10:Sender>
+                <ns10:Remarks>Документ принят в обработку</ns10:Remarks>
+            </ns10:OrderStatus>
+        </ns10:VerifyApplicationCreateReply>
+    </ns2:Body>
+</ns2:Envelope>

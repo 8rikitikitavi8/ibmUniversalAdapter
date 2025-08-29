@@ -1,0 +1,46 @@
+<gbo:AccountStatement xmlns:gbo="urn:imb:gbo:v2">
+    <gbo:AccountNo>01923784USDPRCA101</gbo:AccountNo>
+    <gbo:Branch>A01</gbo:Branch>
+    <gbo:CBAccountNo>40817840450010059783</gbo:CBAccountNo>
+    <gbo:Ccy>USD</gbo:Ccy>
+    <gbo:OpenBalance>
+        <gbo:Amount>99000</gbo:Amount>
+    </gbo:OpenBalance>
+    <gbo:CloseBalance>
+        <gbo:Amount>99002.62</gbo:Amount>
+    </gbo:CloseBalance>
+    <gbo:Balances>
+        <gbo:OpenBalance>
+            <gbo:Amount>9573745.5</gbo:Amount>
+            <gbo:Date>2023-08-17</gbo:Date>
+            <gbo:Time>00:00:00</gbo:Time>
+        </gbo:OpenBalance>
+        <gbo:CloseBalance>
+            <gbo:Amount>9573745.5</gbo:Amount>
+            <gbo:Date>2023-08-17</gbo:Date>
+            <gbo:Time>23:59:59</gbo:Time>
+        </gbo:CloseBalance>
+    </gbo:Balances>
+    <gbo:Movements>
+        <gbo:Transaction>
+            <gbo:BookingDate>2023-12-21</gbo:BookingDate>
+            <gbo:ValueDate>2024-02-20</gbo:ValueDate>
+            <gbo:Amount>-1.31</gbo:Amount>
+            <gbo:Type>C</gbo:Type>
+        </gbo:Transaction>
+        <gbo:Payment>
+            <gbo:CorName>ALEKSEEV MIKHAIL MIKHAILOVICH</gbo:CorName>
+        </gbo:Payment>
+    </gbo:Movements>
+    <gbo:Movements>
+        <gbo:Transaction>
+            <gbo:BookingDate>2023-12-21</gbo:BookingDate>
+            <gbo:ValueDate>2024-02-20</gbo:ValueDate>
+            <gbo:Amount>-1.31</gbo:Amount>
+            <gbo:Type>C</gbo:Type>
+        </gbo:Transaction>
+        <gbo:Payment>
+            <gbo:CorName>ALEKSEEV MIKHAIL MIKHAILOVICH</gbo:CorName>
+        </gbo:Payment>
+    </gbo:Movements>
+</gbo:AccountStatement>

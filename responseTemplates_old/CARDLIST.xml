@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header>
+    <UCBRUHeaders xmlns="urn:ucbru:gbo:v4"/>
+  </soapenv:Header>
+  <soapenv:Body>
+    <gbo:CardList xmlns:gbo="urn:ucbru:gbo:v4">
+      <gbo:Card>
+        <gbo:CardIdentifiers>
+          <gbo:ObjectType>CardIdentification</gbo:ObjectType>
+          <gbo:Identifier>
+            <gbo:Value>4230398</gbo:Value>
+            <gbo:System>
+              <gbo:Name>PRIME</gbo:Name>
+              <gbo:Master>Y</gbo:Master>
+            </gbo:System>
+          </gbo:Identifier>
+          <gbo:Identifier>
+            <gbo:Value>A01ZDRC21110002Q</gbo:Value>
+            <gbo:System>
+              <gbo:Name>FCC</gbo:Name>
+              <gbo:Master>N</gbo:Master>
+            </gbo:System>
+          </gbo:Identifier>
+        </gbo:CardIdentifiers>
+        <gbo:CardNumber>220084******6138</gbo:CardNumber>
+        <gbo:Account>40817810250011316244</gbo:Account>
+        <gbo:InternalAccountNumber>00923947RURPRDC104</gbo:InternalAccountNumber>
+        <gbo:CustomerNum>00923947</gbo:CustomerNum>
+        <gbo:CardHolder>K*</gbo:CardHolder>
+        <gbo:Product>RU_STAFF(R)</gbo:Product>
+        <gbo:Tariff>0</gbo:Tariff>
+        <gbo:IsAdditionalCard>Y</gbo:IsAdditionalCard>
+        <gbo:NewCardDate>2021-04-21</gbo:NewCardDate>
+        <gbo:DateCardReissued>2021-04-21</gbo:DateCardReissued>
+        <gbo:DateValidCard>2025-12-31</gbo:DateValidCard>
+        <gbo:Currency>643</gbo:Currency>
+        <gbo:CardStatus>NORM</gbo:CardStatus>
+        <gbo:DrCr>D</gbo:DrCr>
+        <gbo:IsActiveCardFlag>Y</gbo:IsActiveCardFlag>
+        <gbo:UDF>
+          <gbo:Name>Interestrate</gbo:Name>
+          <gbo:Value>0</gbo:Value>
+        </gbo:UDF>
+        <gbo:UDF>
+          <gbo:Name>HolderName</gbo:Name>
+          <gbo:Value>Ì* Ê* À*</gbo:Value>
+        </gbo:UDF>
+        <gbo:UDF>
+          <gbo:Name>CardBelongType</gbo:Name>
+          <gbo:Value>2</gbo:Value>
+        </gbo:UDF>
+        <gbo:UDF>
+          <gbo:Name>CardTypeId</gbo:Name>
+          <gbo:Value>2200840</gbo:Value>
+        </gbo:UDF>
+        <gbo:UDF>
+          <gbo:Name>CardStatusUDF</gbo:Name>
+          <gbo:Value>A</gbo:Value>
+        </gbo:UDF>
+      </gbo:Card>
+    </gbo:CardList>
+  </soapenv:Body>
+</soapenv:Envelope>

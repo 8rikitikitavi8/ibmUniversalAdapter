@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<x:BSMessage xmlns:x="BS_A_CARDSTM" xmlns:NS1="BS_R_CARDSTM" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:NS2="EnterMsgs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="${receive.longId}" Version="STD1.0" AnsDateTime="${generate.dateNow}">
+	<BSHead CustomerID="${receive.id}" ABSMessage="">
+		<Errors>
+			<m c="0" e=""></m>
+		</Errors>
+	</BSHead>
+	<BSAnswer BDate="08.08.2022" EDate="10.08.2022">
+		<TRES>
+			<T CID="1" T="Доступный остаток по карте/Open to buy"></T>
+		</TRES>
+		<Card N="3612351" HC="N" NM="522458******7476" Acc="40817978650010093398" CUR="EUR" TYPE="">
+			<Add CID="1" V="32.16"></Add>
+		</Card>
+		<Card N="3593431" HC="N" NM="489042******3945" Acc="40817810850011115858" CUR="RUB" TYPE="">
+			<Add CID="1" V="50698.58"></Add>
+		</Card>
+	</BSAnswer>
+</x:BSMessage>

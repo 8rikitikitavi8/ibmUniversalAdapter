@@ -1,0 +1,47 @@
+<ns2:Envelope xmlns:ns2="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns4="urn:ucbru:gbo:v3" xmlns:ns3="urn:ucbru:gbo:v3:st" xmlns:ns6="urn:ucbru:gbo:v5:spdep" xmlns:ns20="urn:ucbru:esb:srv:sms" xmlns:ns5="urn:ucbru:gbo:v5:loan" xmlns:ns8="urn:ucbru:gbo:v5:card" xmlns:ns7="urn:ucbru:gbo:v5:acc" xmlns:ns13="urn:ucbru:gbo:v5:push:devices:response" xmlns:ns9="urn:ucbru:gbo:v5:cif" xmlns:ns12="urn:ucbru:gbo:v5:push:devices:request" xmlns:ns11="urn:ucbru:gbo:v5:ordst" xmlns:ns10="urn:ucbru:gbo:v5:docst" xmlns:ns21="http://mfms.ru/mfmsgate/push/devices" xmlns:ns17="urn:ucbru:gbo:v4" xmlns:ns16="urn:ucbru:gbo:v5" xmlns:ns15="urn:ucbru:gbo:v5:sdpmt" xmlns:ns14="urn:ucbru:gbo:v5:scust" xmlns:ns19="urn:imb:gbo:BSCardAuthorization" xmlns:ns18="urn:imb:gbo:BSCardStm">
+    <ns2:Header>
+        <ns16:UCBRUHeaders>
+            <ns16:Audit>
+                <ns16:MessagePath>
+                    <ns16:Step>
+                        <ns16:Application.Module>SDPMTC2BPmtDetQuery</ns16:Application.Module>
+                        <ns16:VersionId>urn:ucbru:gbo:v5</ns16:VersionId>
+                        <ns16:TimeStamp>2023-12-12T09:07:25.049+03:00</ns16:TimeStamp>
+                        <ns16:RoutingRole>START</ns16:RoutingRole>
+                        <ns16:Comment></ns16:Comment>
+                    </ns16:Step>
+                    <ns16:Step>
+                        <ns16:Application.Module>SDPMTC2BPmtDetQuery</ns16:Application.Module>
+                        <ns16:VersionId>urn:ucbru:gbo:v5</ns16:VersionId>
+                        <ns16:TimeStamp>2023-12-12T09:07:25.332+03:00</ns16:TimeStamp>
+                        <ns16:RoutingRole>SUCCESS</ns16:RoutingRole>
+                        <ns16:Comment></ns16:Comment>
+                    </ns16:Step>
+                </ns16:MessagePath>
+            </ns16:Audit>
+        </ns16:UCBRUHeaders>
+    </ns2:Header>
+    <ns2:Body>
+        <ns15:SDPMTC2BPmtDet>
+            <ns15:Query>
+                <ns15:PayerIdentity>0079507170028</ns15:PayerIdentity>
+                <ns15:QRId>AD100076EK646LMT960PS3D91F9CCEB6</ns15:QRId>
+            </ns15:Query>
+            <ns15:Details>
+                <ns15:QRId>AD100076EK646LMT960PS3D91F9CCEB6</ns15:QRId>
+                <ns15:Type>01</ns15:Type>
+                <ns15:Scenario>C2B_CASH_REGISTER</ns15:Scenario>
+                <ns15:OfficialName>ООО "РРВД"</ns15:OfficialName>
+                <ns15:TradeName>Кофейня РРВД</ns15:TradeName>
+                <ns15:BankId>100000000030</ns15:BankId>
+                <ns15:OGRN>1096189001325</ns15:OGRN>
+                <ns15:INN>6122010960</ns15:INN>
+                <ns15:Amount>12500</ns15:Amount>
+                <ns15:Currency>RUB</ns15:Currency>
+                <ns15:Narrative>Капучино 300 мл 1 шт., булочка 1 шт.</ns15:Narrative>
+                <ns15:Address>Ростовская обл., Мясниковский р-н, х.Ленинаван, ул.Ленина, д.1, к.П</ns15:Address>
+                <ns15:MCC>5812</ns15:MCC>
+            </ns15:Details>
+        </ns15:SDPMTC2BPmtDet>
+    </ns2:Body>
+</ns2:Envelope>

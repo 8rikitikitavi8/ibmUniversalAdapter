@@ -1,0 +1,491 @@
+server:
+  port: 9016
+logging:
+  level:
+    root: info
+ibm.mq:
+  mqs:
+    -
+      queueManager: QM_BSSADAP41
+      channel: SYSTEM.ADMIN.SVRCONN
+      connName:  vs2515.imb.ru(1415)
+      host: vs2515.imb.ru
+      port: 1415
+      user: testperfeuc
+      password: kBBS4N6uU5szWSkMIaA333o7
+      databasePath: "SQLite.db"
+      charset: "CP1251"
+      destinationWithProperties:
+        - requestQueue: UCBRU.SDPMT.V5.DFLTBEBA.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.DFLTBEBA.RESPONSE
+          templateName: "DfLtBeBa.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.C2BPMTDET.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.C2BPMTDET.RESPONSE
+          templateName: "C2BPMTDET.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.C2BPMEX.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.C2BPMEX.RESPONSE
+          templateName: "C2BPMEX.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.PACO.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.PACO.RESPONSE
+          templateName: "PaCo.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.TR.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.TR.RESPONSE
+          templateName: "Tr.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.PRODUCTUSEQUERY.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.PRODUCTUSEQUERY.RESPONSE
+          templateName: "SDPMTProductUseQuery.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.PULLORDERINIT.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.PULLORDERINIT.RESPONSE
+          templateName: "SDPMTPullOrderInit.xml"
+          sleep: 1
+        - requestQueue: UCBRU.BSS.STM.ACCLIST.REQUEST
+          responseQueue: UCBRU.BSS.STM.ACCLIST.REPLY
+          templateName: "stmAccList.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SRVCARD.CARDLIST.REQUEST
+          responseQueue: UCBRU.SRVCARD.CARDLIST.RESPONSE
+          templateName: "CARDLIST.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SRVACC.CUSTACC.REQUEST
+          responseQueue: UCBRU.SRVACC.CUSTACC.RESPONSE
+          templateName: "CustAcc.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SRVCIF.CUSTINFO.REQUEST
+          responseQueue: UCBRU.SRVCIF.CUSTINFO.RESPONSE
+          templateName: "CustInfo.xml"
+          sleep: 1
+        - requestQueue: IMB.ENTERIMB.ABSSERV2.LOANS.REQUEST
+          responseQueue: IMB.ENTERIMB.ABSSERV2.LOANS.RESPONSE
+          templateName: "Loans.xml"
+          sleep: 1
+        - requestQueue: UCBRU.BSS.ABSSERV2.ACCLIST.REQUEST
+          responseQueue: UCBRU.BSS.ABSSERV2.ACCLIST.REPLY
+          templateName: "AccList.xml"
+          sleep: 1
+        - requestQueue: DEPOSITMAIN.REQUEST
+          responseQueue: DEPOSITMAIN.RESPONSE
+          templateName: "DepositMain.xml"
+          sleep: 1
+        - requestQueue: IMB.BSS.OUT
+          responseQueue: IMB.PRIME.BSS.IN
+          templateName: "ImbBss.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SRVCARD.CARDSDETAILS.REQUEST
+          responseQueue: UCBRU.SRVCARD.CARDSDETAILS.RESPONSE
+          templateName: "CardDetails.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SCUST.V5.CULIQU.REQUEST
+          responseQueue: UCBRU.SCUST.V5.CULIQU.RESPONSE
+          templateName: "EnterCuLiQu.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SAML.V5.ACST.REQUEST
+          responseQueue: UCBRU.SAML.V5.ACST.RESPONSE
+          templateName: "AcSt.xml"
+          sleep: 1
+    -
+      queueManager: QM_BSSADAP11
+      channel: SYSTEM.ADMIN.SVRCONN
+      connName: vs3077.imb.ru(1415)
+      host: vs3077.imb.ru
+      port: 1415
+      user: testperfeuc
+      password: kBBS4N6uU5szWSkMIaA333o7
+      databasePath: "SQLite.db"
+      charset: "CP1251"
+      destinationWithProperties:
+        - requestQueue: UCBRU.SDPMT.V5.DFLTBEBA.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.DFLTBEBA.RESPONSE
+          templateName: "DfLtBeBa.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.C2BPMTDET.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.C2BPMTDET.RESPONSE
+          templateName: "C2BPMTDET.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.C2BPMEX.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.C2BPMEX.RESPONSE
+          templateName: "C2BPMEX.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.PACO.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.PACO.RESPONSE
+          templateName: "PaCo.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.TR.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.TR.RESPONSE
+          templateName: "Tr.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.PRODUCTUSEQUERY.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.PRODUCTUSEQUERY.RESPONSE
+          templateName: "SDPMTProductUseQuery.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.PULLORDERINIT.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.PULLORDERINIT.RESPONSE
+          templateName: "SDPMTPullOrderInit.xml"
+          sleep: 1
+        - requestQueue: UCBRU.BSS.STM.ACCLIST.REQUEST
+          responseQueue: UCBRU.BSS.STM.ACCLIST.REPLY
+          templateName: "stmAccList.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SRVCARD.CARDLIST.REQUEST
+          responseQueue: UCBRU.SRVCARD.CARDLIST.RESPONSE
+          templateName: "CARDLIST.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SRVCIF.CUSTINFO.REQUEST
+          responseQueue: UCBRU.SRVCIF.CUSTINFO.RESPONSE
+          templateName: "CustInfo.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SRVACC.CUSTACC.REQUEST
+          responseQueue: UCBRU.SRVACC.CUSTACC.RESPONSE
+          templateName: "CustAcc.xml"
+          sleep: 1
+        - requestQueue: IMB.ENTERIMB.ABSSERV2.LOANS.REQUEST
+          responseQueue: IMB.ENTERIMB.ABSSERV2.LOANS.RESPONSE
+          templateName: "Loans.xml"
+          sleep: 1
+        - requestQueue: UCBRU.BSS.ABSSERV2.ACCLIST.REQUEST
+          responseQueue: UCBRU.BSS.ABSSERV2.ACCLIST.REPLY
+          templateName: "AccList.xml"
+          sleep: 1
+        - requestQueue: DEPOSITMAIN.REQUEST
+          responseQueue: DEPOSITMAIN.RESPONSE
+          templateName: "DepositMain.xml"
+          sleep: 1
+        - requestQueue: IMB.BSS.OUT
+          responseQueue: IMB.PRIME.BSS.IN
+          templateName: "ImbBss.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SRVCARD.CARDSDETAILS.REQUEST
+          responseQueue: UCBRU.SRVCARD.CARDSDETAILS.RESPONSE
+          templateName: "CardDetails.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SCUST.V5.CULIQU.REQUEST
+          responseQueue: UCBRU.SCUST.V5.CULIQU.RESPONSE
+          templateName: "EnterCuLiQu.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SAML.V5.ACST.REQUEST
+          responseQueue: UCBRU.SAML.V5.ACST.RESPONSE
+          templateName: "AcSt.xml"
+          sleep: 1
+    -
+      queueManager: QM_BSSADAP71
+      channel: SYSTEM.ADMIN.SVRCONN
+      connName: vs2514.imb.ru(1415)
+      host: vs2514.imb.ru
+      port: 1415
+      user: testperfeuc
+      password: kBBS4N6uU5szWSkMIaA333o7
+      databasePath: "SQLite.db"
+      charset: "CP1251"
+      destinationWithProperties:
+        - requestQueue: UCBRU.SDPMT.V5.DFLTBEBA.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.DFLTBEBA.RESPONSE
+          templateName: "DfLtBeBa.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.C2BPMTDET.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.C2BPMTDET.RESPONSE
+          templateName: "C2BPMTDET.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.C2BPMEX.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.C2BPMEX.RESPONSE
+          templateName: "C2BPMEX.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.PACO.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.PACO.RESPONSE
+          templateName: "PaCo.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.TR.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.TR.RESPONSE
+          templateName: "Tr.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.PRODUCTUSEQUERY.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.PRODUCTUSEQUERY.RESPONSE
+          templateName: "SDPMTProductUseQuery.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.PULLORDERINIT.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.PULLORDERINIT.RESPONSE
+          templateName: "SDPMTPullOrderInit.xml"
+          sleep: 1
+        - requestQueue: UCBRU.BSS.STM.ACCLIST.REQUEST
+          responseQueue: UCBRU.BSS.STM.ACCLIST.REPLY
+          templateName: "stmAccList.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SRVCARD.CARDLIST.REQUEST
+          responseQueue: UCBRU.SRVCARD.CARDLIST.RESPONSE
+          templateName: "CARDLIST.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SRVACC.CUSTACC.REQUEST
+          responseQueue: UCBRU.SRVACC.CUSTACC.RESPONSE
+          templateName: "CustAcc.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SRVCIF.CUSTINFO.REQUEST
+          responseQueue: UCBRU.SRVCIF.CUSTINFO.RESPONSE
+          templateName: "CustInfo.xml"
+          sleep: 1
+        - requestQueue: IMB.ENTERIMB.ABSSERV2.LOANS.REQUEST
+          responseQueue: IMB.ENTERIMB.ABSSERV2.LOANS.RESPONSE
+          templateName: "Loans.xml"
+          sleep: 1
+        - requestQueue: UCBRU.BSS.ABSSERV2.ACCLIST.REQUEST
+          responseQueue: UCBRU.BSS.ABSSERV2.ACCLIST.REPLY
+          templateName: "AccList.xml"
+          sleep: 1
+        - requestQueue: DEPOSITMAIN.REQUEST
+          responseQueue: DEPOSITMAIN.RESPONSE
+          templateName: "DepositMain.xml"
+          sleep: 1
+        - requestQueue: IMB.BSS.OUT
+          responseQueue: IMB.PRIME.BSS.IN
+          templateName: "ImbBss.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SRVCARD.CARDSDETAILS.REQUEST
+          responseQueue: UCBRU.SRVCARD.CARDSDETAILS.RESPONSE
+          templateName: "CardDetails.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SCUST.V5.CULIQU.REQUEST
+          responseQueue: UCBRU.SCUST.V5.CULIQU.RESPONSE
+          templateName: "EnterCuLiQu.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SAML.V5.ACST.REQUEST
+          responseQueue: UCBRU.SAML.V5.ACST.RESPONSE
+          templateName: "AcSt.xml"
+          sleep: 1
+    -
+      queueManager: QM_BSSADAP61
+      channel: SYSTEM.ADMIN.SVRCONN
+      connName: vs2513.imb.ru(1415)
+      host: vs2513.imb.ru
+      port: 1415
+      user: testperfeuc
+      password: kBBS4N6uU5szWSkMIaA333o7
+      databasePath: "SQLite.db"
+      charset: "CP1251"
+      destinationWithProperties:
+        - requestQueue: UCBRU.SDPMT.V5.DFLTBEBA.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.DFLTBEBA.RESPONSE
+          templateName: "DfLtBeBa.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.C2BPMTDET.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.C2BPMTDET.RESPONSE
+          templateName: "C2BPMTDET.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.C2BPMEX.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.C2BPMEX.RESPONSE
+          templateName: "C2BPMEX.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.PACO.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.PACO.RESPONSE
+          templateName: "PaCo.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.TR.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.TR.RESPONSE
+          templateName: "Tr.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.PRODUCTUSEQUERY.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.PRODUCTUSEQUERY.RESPONSE
+          templateName: "SDPMTProductUseQuery.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.PULLORDERINIT.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.PULLORDERINIT.RESPONSE
+          templateName: "SDPMTPullOrderInit.xml"
+          sleep: 1
+        - requestQueue: UCBRU.BSS.STM.ACCLIST.REQUEST
+          responseQueue: UCBRU.BSS.STM.ACCLIST.REPLY
+          templateName: "stmAccList.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SRVCARD.CARDLIST.REQUEST
+          responseQueue: UCBRU.SRVCARD.CARDLIST.RESPONSE
+          templateName: "CARDLIST.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SRVACC.CUSTACC.REQUEST
+          responseQueue: UCBRU.SRVACC.CUSTACC.RESPONSE
+          templateName: "CustAcc.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SRVCIF.CUSTINFO.REQUEST
+          responseQueue: UCBRU.SRVCIF.CUSTINFO.RESPONSE
+          templateName: "CustInfo.xml"
+          sleep: 1
+        - requestQueue: IMB.ENTERIMB.ABSSERV2.LOANS.REQUEST
+          responseQueue: IMB.ENTERIMB.ABSSERV2.LOANS.RESPONSE
+          templateName: "Loans.xml"
+          sleep: 1
+        - requestQueue: UCBRU.BSS.ABSSERV2.ACCLIST.REQUEST
+          responseQueue: UCBRU.BSS.ABSSERV2.ACCLIST.REPLY
+          templateName: "AccList.xml"
+          sleep: 1
+        - requestQueue: DEPOSITMAIN.REQUEST
+          responseQueue: DEPOSITMAIN.RESPONSE
+          templateName: "DepositMain.xml"
+          sleep: 1
+        - requestQueue: IMB.BSS.OUT
+          responseQueue: IMB.PRIME.BSS.IN
+          templateName: "ImbBss.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SRVCARD.CARDSDETAILS.REQUEST
+          responseQueue: UCBRU.SRVCARD.CARDSDETAILS.RESPONSE
+          templateName: "CardDetails.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SCUST.V5.CULIQU.REQUEST
+          responseQueue: UCBRU.SCUST.V5.CULIQU.RESPONSE
+          templateName: "EnterCuLiQu.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SAML.V5.ACST.REQUEST
+          responseQueue: UCBRU.SAML.V5.ACST.RESPONSE
+          templateName: "AcSt.xml"
+          sleep: 1
+    - queueManager: QM_BSSADAP21
+      channel: SYSTEM.ADMIN.SVRCONN
+      connName: vs2510.imb.ru(1415)
+      host: vs2510.imb.ru
+      port: 1415
+      user: testperfeuc
+      password: kBBS4N6uU5szWSkMIaA333o7
+      databasePath: "SQLite.db"
+      charset: "CP1251"
+      destinationWithProperties:
+        - requestQueue: IMB.ENTERIMB.ABSSERV2.LOANS.REQUEST
+          responseQueue: IMB.ENTERIMB.ABSSERV2.LOANS.RESPONSE
+          templateName: "Loans.xml"
+          sleep: 1
+        - requestQueue: UCBRU.BSS.ABSSERV2.ACCLIST.REQUEST
+          responseQueue: UCBRU.BSS.ABSSERV2.ACCLIST.REPLY
+          templateName: "AccList.xml"
+          sleep: 1
+        - requestQueue: DEPOSITMAIN.REQUEST
+          responseQueue: DEPOSITMAIN.RESPONSE
+          templateName: "DepositMain.xml"
+          sleep: 1
+        - requestQueue: IMB.BSS.OUT
+          responseQueue: IMB.PRIME.BSS.IN
+          templateName: "ImbBss.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SRVCARD.CARDSDETAILS.REQUEST
+          responseQueue: UCBRU.SRVCARD.CARDSDETAILS.RESPONSE
+          templateName: "CardDetails.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SCUST.V5.CULIQU.REQUEST
+          responseQueue: UCBRU.SCUST.V5.CULIQU.RESPONSE
+          templateName: "EnterCuLiQu.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SAML.V5.ACST.REQUEST
+          responseQueue: UCBRU.SAML.V5.ACST.RESPONSE
+          templateName: "AcSt.xml"
+          sleep: 1
+    - queueManager: QM_ESB
+      channel: SYSTEM.ADMIN.SVRCONN
+      connName: vs2495.imb.ru(1414)
+      host: vs2495.imb.ru
+      port: 1414
+      user: testperfeuc
+      password: kBBS4N6uU5szWSkMIaA333o7
+      sslConnect: true
+      sslTrustStore: "truststore.jks"
+      sslTrustStorePassword: "123456"
+      databasePath: "SQLite_all.db"
+      charset: "UTF-8"
+      destinationWithProperties:
+        - requestQueue: UCBRU.SDPMT.V5.PUORIN.REQUEST
+          responseQueue: UCBRU.APP.MCSP.SDPMT.V5.PUORIN.RESPONSE
+          templateName: "SDPMTPullOrderInit.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SCUST.V5.CULIQU.REQUEST
+          responseQueue: UCBRU.APP.EUC.SCUST.CULIQU.RESPONSE
+          templateName: "CuLiQu.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SACC.V5.ACLIQU.REQUEST
+          responseQueue: UCBRU.APP.EUC.SACC.ACLIQU.RESPONSE
+          templateName: "AcLiQu.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SRV.SRVLOAN.V3.CULOQU.MQ.REQUEST
+          responseQueue: UCBRU.APP.EUC.SRVLOAN.CULOQU.MQ.RESPONSE
+          templateName: "CuLoQu.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SPDEP.V5.DELIQU.REQUEST
+          responseQueue: UCBRU.APP.EUC.SPDEP.DELIQU.RESPONSE
+          templateName: "DeLiQu.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SRV.SRVCARD.V4.CALIQU.MQ.REQUEST
+          responseQueue: UCBRU.APP.EUC.SRVCARD.CALIQU.MQ.RESPONSE
+          templateName: "SrvCaLiQu.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SAML.V5.ACST.REQUEST
+          responseQueue: UCBRU.APP.EUC.SAML.ACST.RESPONSE
+          templateName: "AcSt.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.DFLTBEBA.REQUEST
+          responseQueue: UCBRU.APP.EUC.SDPMT.DFLTBEBA.RESPONSE
+          templateName: "DfLtBeBa.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.GESTTR.REQUEST
+          responseQueue: UCBRU.APP.EUC.SDPMT.GESTTR.RESPONSE
+          templateName: "GeStTr.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.PACO.REQUEST
+          responseQueue: UCBRU.APP.EUC.SDPMT.PACO.RESPONSE
+          templateName: "PaCo.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.PRUSQU.REQUEST
+          responseQueue: UCBRU.APP.MCSP.SDPMT.V5.PRUSQU.RESPONSE
+          templateName: "PrUsQu.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.TR.REQUEST
+          responseQueue: UCBRU.APP.EUC.SDPMT.TR.RESPONSE
+          templateName: "Tr.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.C2BPMDE.REQUEST
+          responseQueue: UCBRU.APP.EUC.SDPMT.C2BPMDE.RESPONSE
+          templateName: "C2BPMDE.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.C2BPMEX.REQUEST
+          responseQueue: UCBRU.APP.EUC.SDPMT.EXEC.RESPONSE
+          templateName: "SDPMTC2BPmtExec.xml"
+          sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.PMTST.REQUEST
+          responseQueue: UCBRU.APP.EUC.SDPMT.PMTST.RESPONSE
+          templateName: "SDPMTPmtStatQu.xml"
+          sleep: 1
+
+
+
+#Prometheus
+management:
+  metrics:
+    tags:
+      application: mcsp-ibm-mock
+
+  security:
+    enabled: false
+
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    jmx:
+      exposure:
+        include: "*"
+
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+    health:
+      show-details: always
+      show-components: always
+      probes:
+        enabled: true
+    shutdown:
+      enabled: true
+    info:
+      enabled: true
+      env:
+        enabled: true
+
+  info:
+    env:
+      enabled: true
+

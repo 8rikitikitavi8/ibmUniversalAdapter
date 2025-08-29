@@ -2,7 +2,7 @@ server:
   port: 9016
 logging:
   level:
-    root: info
+    root: debug
 ibm.mq:
   mqs:
     -
@@ -12,7 +12,7 @@ ibm.mq:
       host: vs2515.imb.ru
       port: 1415
       user: testperfeuc
-      password: kBBS4N6uU5szWSkMIaA333o7
+      password: kBBS4N6uU5szWSkMIaA333o8
       databasePath: "SQLite.db"
       charset: "CP1251"
       destinationWithProperties:
@@ -48,6 +48,10 @@ ibm.mq:
           responseQueue: UCBRU.BSS.STM.ACCLIST.REPLY
           templateName: "stmAccList.xml"
           sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.GESTTR.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.GESTTR.RESPONSE
+          templateName: "GeStTr.xml"
+          sleep: 1
         - requestQueue: UCBRU.SRVCARD.CARDLIST.REQUEST
           responseQueue: UCBRU.SRVCARD.CARDLIST.RESPONSE
           templateName: "CARDLIST.xml"
@@ -59,9 +63,9 @@ ibm.mq:
         - requestQueue: UCBRU.SRVCIF.CUSTINFO.REQUEST
           responseQueue: UCBRU.SRVCIF.CUSTINFO.RESPONSE
           templateName: "CustInfo.xml"
-          sleep: 1
-        - requestQueue: IMB.ENTERIMB.ABSSERV2.LOANS.REQUEST
-          responseQueue: IMB.ENTERIMB.ABSSERV2.LOANS.RESPONSE
+          sleep: 0
+        - requestQueue: UCBRU.APP.EUC.SRVLOAN.CULOQU.MQ.REQUEST
+          responseQueue: UCBRU.APP.EUC.SRVLOAN.CULOQU.MQ.RESPONSE
           templateName: "Loans.xml"
           sleep: 1
         - requestQueue: UCBRU.BSS.ABSSERV2.ACCLIST.REQUEST
@@ -95,7 +99,7 @@ ibm.mq:
       host: vs3077.imb.ru
       port: 1415
       user: testperfeuc
-      password: kBBS4N6uU5szWSkMIaA333o7
+      password: kBBS4N6uU5szWSkMIaA333o8
       databasePath: "SQLite.db"
       charset: "CP1251"
       destinationWithProperties:
@@ -131,6 +135,10 @@ ibm.mq:
           responseQueue: UCBRU.BSS.STM.ACCLIST.REPLY
           templateName: "stmAccList.xml"
           sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.GESTTR.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.GESTTR.RESPONSE
+          templateName: "GeStTr.xml"
+          sleep: 1
         - requestQueue: UCBRU.SRVCARD.CARDLIST.REQUEST
           responseQueue: UCBRU.SRVCARD.CARDLIST.RESPONSE
           templateName: "CARDLIST.xml"
@@ -138,13 +146,13 @@ ibm.mq:
         - requestQueue: UCBRU.SRVCIF.CUSTINFO.REQUEST
           responseQueue: UCBRU.SRVCIF.CUSTINFO.RESPONSE
           templateName: "CustInfo.xml"
-          sleep: 1
+          sleep: 0
         - requestQueue: UCBRU.SRVACC.CUSTACC.REQUEST
           responseQueue: UCBRU.SRVACC.CUSTACC.RESPONSE
           templateName: "CustAcc.xml"
           sleep: 1
-        - requestQueue: IMB.ENTERIMB.ABSSERV2.LOANS.REQUEST
-          responseQueue: IMB.ENTERIMB.ABSSERV2.LOANS.RESPONSE
+        - requestQueue: UCBRU.APP.EUC.SRVLOAN.CULOQU.MQ.REQUEST
+          responseQueue: UCBRU.APP.EUC.SRVLOAN.CULOQU.MQ.RESPONSE
           templateName: "Loans.xml"
           sleep: 1
         - requestQueue: UCBRU.BSS.ABSSERV2.ACCLIST.REQUEST
@@ -178,7 +186,7 @@ ibm.mq:
       host: vs2514.imb.ru
       port: 1415
       user: testperfeuc
-      password: kBBS4N6uU5szWSkMIaA333o7
+      password: kBBS4N6uU5szWSkMIaA333o8
       databasePath: "SQLite.db"
       charset: "CP1251"
       destinationWithProperties:
@@ -214,6 +222,10 @@ ibm.mq:
           responseQueue: UCBRU.BSS.STM.ACCLIST.REPLY
           templateName: "stmAccList.xml"
           sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.GESTTR.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.GESTTR.RESPONSE
+          templateName: "GeStTr.xml"
+          sleep: 1
         - requestQueue: UCBRU.SRVCARD.CARDLIST.REQUEST
           responseQueue: UCBRU.SRVCARD.CARDLIST.RESPONSE
           templateName: "CARDLIST.xml"
@@ -225,9 +237,9 @@ ibm.mq:
         - requestQueue: UCBRU.SRVCIF.CUSTINFO.REQUEST
           responseQueue: UCBRU.SRVCIF.CUSTINFO.RESPONSE
           templateName: "CustInfo.xml"
-          sleep: 1
-        - requestQueue: IMB.ENTERIMB.ABSSERV2.LOANS.REQUEST
-          responseQueue: IMB.ENTERIMB.ABSSERV2.LOANS.RESPONSE
+          sleep: 0
+        - requestQueue: UCBRU.APP.EUC.SRVLOAN.CULOQU.MQ.REQUEST
+          responseQueue: UCBRU.APP.EUC.SRVLOAN.CULOQU.MQ.RESPONSE
           templateName: "Loans.xml"
           sleep: 1
         - requestQueue: UCBRU.BSS.ABSSERV2.ACCLIST.REQUEST
@@ -261,7 +273,7 @@ ibm.mq:
       host: vs2513.imb.ru
       port: 1415
       user: testperfeuc
-      password: kBBS4N6uU5szWSkMIaA333o7
+      password: kBBS4N6uU5szWSkMIaA333o8
       databasePath: "SQLite.db"
       charset: "CP1251"
       destinationWithProperties:
@@ -297,6 +309,10 @@ ibm.mq:
           responseQueue: UCBRU.BSS.STM.ACCLIST.REPLY
           templateName: "stmAccList.xml"
           sleep: 1
+        - requestQueue: UCBRU.SDPMT.V5.GESTTR.REQUEST
+          responseQueue: UCBRU.SDPMT.V5.GESTTR.RESPONSE
+          templateName: "GeStTr.xml"
+          sleep: 1
         - requestQueue: UCBRU.SRVCARD.CARDLIST.REQUEST
           responseQueue: UCBRU.SRVCARD.CARDLIST.RESPONSE
           templateName: "CARDLIST.xml"
@@ -308,9 +324,9 @@ ibm.mq:
         - requestQueue: UCBRU.SRVCIF.CUSTINFO.REQUEST
           responseQueue: UCBRU.SRVCIF.CUSTINFO.RESPONSE
           templateName: "CustInfo.xml"
-          sleep: 1
-        - requestQueue: IMB.ENTERIMB.ABSSERV2.LOANS.REQUEST
-          responseQueue: IMB.ENTERIMB.ABSSERV2.LOANS.RESPONSE
+          sleep: 0
+        - requestQueue: UCBRU.APP.EUC.SRVLOAN.CULOQU.MQ.REQUEST
+          responseQueue: UCBRU.APP.EUC.SRVLOAN.CULOQU.MQ.RESPONSE
           templateName: "Loans.xml"
           sleep: 1
         - requestQueue: UCBRU.BSS.ABSSERV2.ACCLIST.REQUEST
@@ -337,51 +353,67 @@ ibm.mq:
           responseQueue: UCBRU.SAML.V5.ACST.RESPONSE
           templateName: "AcSt.xml"
           sleep: 1
+
     - queueManager: QM_BSSADAP21
-      channel: SYSTEM.ADMIN.SVRCONN
-      connName: vs2510.imb.ru(1415)
+      channel: UCBRU.BSSEGG.SVRCONN
+      connName: vs2510.imb.ru(1416)
       host: vs2510.imb.ru
-      port: 1415
+      port: 1416
       user: testperfeuc
-      password: kBBS4N6uU5szWSkMIaA333o7
-      databasePath: "SQLite.db"
-      charset: "CP1251"
+      password: kBBS4N6uU5szWSkMIaA333o8
+      databasePath: "SQLite_all.db"
+      charset: "UTF-8"
       destinationWithProperties:
-        - requestQueue: IMB.ENTERIMB.ABSSERV2.LOANS.REQUEST
-          responseQueue: IMB.ENTERIMB.ABSSERV2.LOANS.RESPONSE
-          templateName: "Loans.xml"
+        - requestQueue: UCBRU.P2P.EUC.BSSEGG.GISGMP30.REQUEST
+          responseQueue: UCBRU.P2P.EUC.BSSEGG.GISGMP30.RESPONSE
+          templateName: "gisgmp30_old.xml"
+          needReplaceMessageId: true
           sleep: 1
-        - requestQueue: UCBRU.BSS.ABSSERV2.ACCLIST.REQUEST
-          responseQueue: UCBRU.BSS.ABSSERV2.ACCLIST.REPLY
-          templateName: "AccList.xml"
-          sleep: 1
-        - requestQueue: DEPOSITMAIN.REQUEST
-          responseQueue: DEPOSITMAIN.RESPONSE
-          templateName: "DepositMain.xml"
-          sleep: 1
-        - requestQueue: IMB.BSS.OUT
-          responseQueue: IMB.PRIME.BSS.IN
-          templateName: "ImbBss.xml"
-          sleep: 1
-        - requestQueue: UCBRU.SRVCARD.CARDSDETAILS.REQUEST
-          responseQueue: UCBRU.SRVCARD.CARDSDETAILS.RESPONSE
-          templateName: "CardDetails.xml"
-          sleep: 1
-        - requestQueue: UCBRU.SCUST.V5.CULIQU.REQUEST
-          responseQueue: UCBRU.SCUST.V5.CULIQU.RESPONSE
-          templateName: "EnterCuLiQu.xml"
-          sleep: 1
-        - requestQueue: UCBRU.SAML.V5.ACST.REQUEST
-          responseQueue: UCBRU.SAML.V5.ACST.RESPONSE
-          templateName: "AcSt.xml"
-          sleep: 1
+#    - queueManager: QM_BSSADAP21
+#      channel: SYSTEM.ADMIN.SVRCONN
+#      connName: vs2510.imb.ru(1415)
+#      host: vs2510.imb.ru
+#      port: 1415
+#      user: testperfeuc
+#      password: kBBS4N6uU5szWSkMIaA333o8
+#      databasePath: "SQLite.db"
+#      charset: "CP1251"
+#      destinationWithProperties:
+#        - requestQueue: IMB.ENTERIMB.ABSSERV2.LOANS.REQUEST
+#          responseQueue: IMB.ENTERIMB.ABSSERV2.LOANS.RESPONSE
+#          templateName: "Loans.xml"
+#          sleep: 1
+#        - requestQueue: UCBRU.BSS.ABSSERV2.ACCLIST.REQUEST
+#          responseQueue: UCBRU.BSS.ABSSERV2.ACCLIST.REPLY
+#          templateName: "AccList.xml"
+#          sleep: 1
+#        - requestQueue: DEPOSITMAIN.REQUEST
+#          responseQueue: DEPOSITMAIN.RESPONSE
+#          templateName: "DepositMain.xml"
+#          sleep: 1
+#        - requestQueue: IMB.BSS.OUT
+#          responseQueue: IMB.PRIME.BSS.IN
+#          templateName: "ImbBss.xml"
+#          sleep: 1
+#        - requestQueue: UCBRU.SRVCARD.CARDSDETAILS.REQUEST
+#          responseQueue: UCBRU.SRVCARD.CARDSDETAILS.RESPONSE
+#          templateName: "CardDetails.xml"
+#          sleep: 1
+#        - requestQueue: UCBRU.SCUST.V5.CULIQU.REQUEST
+#          responseQueue: UCBRU.SCUST.V5.CULIQU.RESPONSE
+#          templateName: "EnterCuLiQu.xml"
+#          sleep: 1
+#        - requestQueue: UCBRU.SAML.V5.ACST.REQUEST
+#          responseQueue: UCBRU.SAML.V5.ACST.RESPONSE
+#          templateName: "AcSt.xml"
+#          sleep: 1
     - queueManager: QM_ESB
       channel: SYSTEM.ADMIN.SVRCONN
       connName: vs2495.imb.ru(1414)
       host: vs2495.imb.ru
       port: 1414
       user: testperfeuc
-      password: kBBS4N6uU5szWSkMIaA333o7
+      password: kBBS4N6uU5szWSkMIaA333o8
       sslConnect: true
       sslTrustStore: "truststore.jks"
       sslTrustStorePassword: "123456"
@@ -444,18 +476,57 @@ ibm.mq:
           responseQueue: UCBRU.APP.EUC.SDPMT.EXEC.RESPONSE
           templateName: "SDPMTC2BPmtExec.xml"
           sleep: 1
+        - requestQueue: UCBRU.P2P.EUC.SMSGATE.REGDEV.REQUEST
+          responseQueue: UCBRU.APP.EUC.P2P.SMSGATE.REGDEV.RESPONSE
+          templateName: "userDevices.xml"
+          needReplaceMessageId: true
+          sleep: 1
         - requestQueue: UCBRU.SDPMT.V5.PMTST.REQUEST
           responseQueue: UCBRU.APP.EUC.SDPMT.PMTST.RESPONSE
           templateName: "SDPMTPmtStatQu.xml"
+          needReplaceMessageId: true
+          sleep: 1
+        - requestQueue: UCBRU.SCIF.V5.VEAPCR.REQUEST
+          responseQueue: UCBRU.APP.EUC.SCIF.VEAPCR.RESPONSE
+          templateName: "SCIF_V5_VEAPCR.xml"
           sleep: 1
 
 
+#Prometheus
+management:
+  metrics:
+    tags:
+      application: MCSP_ibm_mock
 
-#ibm.mq:
-#  jks:
-#    keystore:
-#      path: mykestore.jks
-#      password: 'awesome password'
-#    truststore:
-#      path: ${ibm.mq.jks.keystore.path}
-#      password: ${ibm.mq.jks.keystore.password}
+  security:
+    enabled: false
+
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    jmx:
+      exposure:
+        include: "*"
+
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+    health:
+      show-details: always
+      show-components: always
+      probes:
+        enabled: true
+    shutdown:
+      enabled: true
+    info:
+      enabled: true
+      env:
+        enabled: true
+
+  info:
+    env:
+      enabled: true
+

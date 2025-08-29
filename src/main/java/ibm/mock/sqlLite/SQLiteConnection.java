@@ -1,14 +1,12 @@
 package ibm.mock.sqlLite;
 
-import com.zaxxer.hikari.HikariConfig;
-import com.zaxxer.hikari.HikariDataSource;
 import ibm.mock.QmProperties;
 import ibm.mock.QueueConsumer;
 import ibm.mock.common.Util;
 import lombok.Data;
+
 import lombok.SneakyThrows;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,15 +22,16 @@ import java.util.concurrent.ConcurrentHashMap;
 
 @Data
 @Component
+@Slf4j
 public class SQLiteConnection {
-    Logger logger = LoggerFactory.getLogger(QueueConsumer.class);
+
     @Autowired
     private QmProperties qmProperties;
 
     @Autowired
     private Util util;
 
-    Map<String, HikariDataSource> hikariDataSource = new ConcurrentHashMap<>();
+
     Map<String, Connection> sqlConnections = new ConcurrentHashMap<>();
 //    private final Connection connection;
 
@@ -73,46 +72,95 @@ public class SQLiteConnection {
         return dataSources;
     }
 
-        public String getValue(Connection connection,String id, String table, String key) {
-        String result;
-        try {
-            Statement statement = connection.createStatement();
-            String query = String.format("SELECT %s FROM %s WHERE id = '%s';", key, table, id);
-//            logger.fine(String.format("Executing query [%s].", query));
-            ResultSet resultSet = statement.executeQuery(query);
-            if (resultSet.next()) {
-                result = resultSet.getString(key);
-            } else {
-//                logger.fine(String.format("No value for id = [%s].", id));
-                return null;
-            }
-        } catch (SQLException exc) {
-//            logger.severe(String.format("Error when getting value [%s] from table [%s] for id [%s]:\n%s", key, table, id, exc));
-            throw new RuntimeException(exc);
-        }
-//        logger.fine(String.format("Returned value [%s] for id [%s]", result, id));
-        return result;
+
+    private boolean isValidIdentifier(String name) {
+        return name != null && name.matches("[A-Za-z0-9_]+");
     }
 
-    public Map<String, String> getRegexMap(Connection connection,String responceQueue) {
+    public String getValue(Connection connection, String id, String table, String key) {
+        if (!isValidIdentifier(table) || !isValidIdentifier(key)) {
+            log.error("Invalid table or column name: {}.{}", table, key);
+            return null;
+        }
+        String sql = "SELECT " + key + " FROM " + table + " WHERE id = ?";
+        try (PreparedStatement ps = connection.prepareStatement(sql)) {
+            ps.setString(1, id);
+            try (ResultSet rs = ps.executeQuery()) {
+                return rs.next() ? rs.getString(key) : null;
+            }
+        } catch (SQLException exc) {
+            throw new RuntimeException(exc);
+        }
+    }
+
+    public Map<String, String> getRegexMap(Connection connection, String responceQueue) {
         long start = System.currentTimeMillis();
         Map<String, String> result = new HashMap<>();
         String table = responceQueue.replaceAll("\\.", "_");
-        try {
-            Statement statement = connection.createStatement();
-//            Statement statement = connection.createStatement();
-            String query = String.format("SELECT name, regex FROM %s;", table);
-            ResultSet resultSet = statement.executeQuery(query);
-            while (resultSet.next()) {
-                result.put(resultSet.getString("name"), resultSet.getString("regex"));
+        if (!isValidIdentifier(table)) {
+            log.error("Invalid table name derived from response queue: {}", table);
+            throw new RuntimeException("Invalid table name: " + table);
+        }
+        String sql = "SELECT name, regex FROM " + table;
+        try (Statement st = connection.createStatement();
+             ResultSet rs = st.executeQuery(sql)) {
+            while (rs.next()) {
+                result.put(rs.getString("name"), rs.getString("regex"));
             }
         } catch (SQLException exc) {
-//            logger.severe(String.format("Error when getting values from table [%s]:\n%s", table, exc));
             throw new RuntimeException(exc);
         }
-        logger.info("Time getRegexMap: " + (System.currentTimeMillis()-start));
+        log.debug("Time getRegexMap: " + (System.currentTimeMillis() - start));
         return result;
     }
+
+
+
+
+
+
+
+
+//        public String getValue(Connection connection,String id, String table, String key) {
+//        String result;
+//        try {
+//            Statement statement = connection.createStatement();
+//            String query = String.format("SELECT %s FROM %s WHERE id = '%s';", key, table, id);
+////            logger.fine(String.format("Executing query [%s].", query));
+//            ResultSet resultSet = statement.executeQuery(query);
+//            if (resultSet.next()) {
+//                result = resultSet.getString(key);
+//            } else {
+////                logger.fine(String.format("No value for id = [%s].", id));
+//                return null;
+//            }
+//        } catch (SQLException exc) {
+////            logger.severe(String.format("Error when getting value [%s] from table [%s] for id [%s]:\n%s", key, table, id, exc));
+//            throw new RuntimeException(exc);
+//        }
+////        logger.fine(String.format("Returned value [%s] for id [%s]", result, id));
+//        return result;
+//    }
+//
+//    public Map<String, String> getRegexMap(Connection connection,String responceQueue) {
+//        long start = System.currentTimeMillis();
+//        Map<String, String> result = new HashMap<>();
+//        String table = responceQueue.replaceAll("\\.", "_");
+//        try {
+//            Statement statement = connection.createStatement();
+////            Statement statement = connection.createStatement();
+//            String query = String.format("SELECT name, regex FROM %s;", table);
+//            ResultSet resultSet = statement.executeQuery(query);
+//            while (resultSet.next()) {
+//                result.put(resultSet.getString("name"), resultSet.getString("regex"));
+//            }
+//        } catch (SQLException exc) {
+////            logger.severe(String.format("Error when getting values from table [%s]:\n%s", table, exc));
+//            throw new RuntimeException(exc);
+//        }
+//        logger.info("Time getRegexMap: " + (System.currentTimeMillis()-start));
+//        return result;
+//    }
 
 
 //    public SQLiteConnection(String path) {

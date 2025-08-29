@@ -1,0 +1,33 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gbo="urn:ucbru:gbo:v5" xmlns:cif="urn:ucbru:gbo:v5:cif">
+    <soapenv:Header>
+        <gbo:UCBRUHeaders>
+            <gbo:Audit>
+                <gbo:MessagePath>
+                    <gbo:Step>
+                        <gbo:Application.Module>SAMLActualStatusesQuery.RequestHandler</gbo:Application.Module>
+                        <gbo:VersionId>v5</gbo:VersionId>
+                        <gbo:TimeStamp>${generate.dateNow}</gbo:TimeStamp>
+                        <gbo:RoutingRole>START</gbo:RoutingRole>
+                        <gbo:Comment>Start of message processing</gbo:Comment>
+                    </gbo:Step>
+                    <gbo:Step>
+                        <gbo:Application.Module>SAMLActualStatusesQuery.RequestHandler</gbo:Application.Module>
+                        <gbo:VersionId>v5</gbo:VersionId>
+                        <gbo:TimeStamp>${generate.dateNow}</gbo:TimeStamp>
+                        <gbo:RoutingRole>SUCCESS</gbo:RoutingRole>
+                        <gbo:Comment>Finish of message processing</gbo:Comment>
+                    </gbo:Step>
+                </gbo:MessagePath>
+            </gbo:Audit>
+        </gbo:UCBRUHeaders>
+    </soapenv:Header>
+    <soapenv:Body>
+        <cif:AMLKYCActualStatus>
+            <cif:AMLKYCDetails>
+                <cif:CustomerNo>${receive.id}</cif:CustomerNo>
+                <cif:KYCStatus>OK</cif:KYCStatus>
+                <cif:KYCActualDate>${generate.dateNow:10}</cif:KYCActualDate>
+            </cif:AMLKYCDetails>
+        </cif:AMLKYCActualStatus>
+    </soapenv:Body>
+</soapenv:Envelope>
